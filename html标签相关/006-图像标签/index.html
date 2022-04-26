@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>alt是当图片无法显示时，用于替换的问题</h2>
+  <img src="./images/peper11.jpeg" alt="小猪佩奇">
+  <h2>title是鼠标放到图片上的提示文字</h2>
+  <img src="./images/peper.jpeg" alt="小猪佩奇" title="小猪佩奇的图片">
+  <h2>width给图片设置宽度，高度会等比缩放</h2>
+  <img src="./images/peper.jpeg" alt="小猪佩奇" title="小猪佩奇的图片" width="500">
+  <h2>height给图片设置高度，宽度会等比缩放</h2>
+  <h2>给最后这张图片加上圆角的边框</h2>
+  <img class="bordered" src="./images/peper.jpeg" alt="小猪佩奇" title="小猪佩奇的图片" height="200">
+
+  <style>
+    img.bordered {
+      border:3px solid pink;
+      border-radius: 5px;
+    }
+  </style>
+</body>
+</html>
