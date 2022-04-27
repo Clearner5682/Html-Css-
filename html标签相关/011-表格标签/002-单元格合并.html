@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td rowspan="2">机台类型</td>
+        <td rowspan="2">机台名称</td>
+        <td colspan="4">收入相关</td>
+        <!-- 多余的单元格去掉 -->
+        <!-- <td></td>
+        <td></td>
+        <td></td> -->
+      </tr>
+      <tr>
+        <!-- 多余的单元格去掉 -->
+        <!-- <td>机台类型</td>
+        <td>机台</td> -->
+        <td>耗币数</td>
+        <td>耗币金额</td>
+        <td>耗套票数</td>
+        <td>耗套票金额</td>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <style>
+    table{
+      width: 900px;
+      border: 1px solid red;
+      border-spacing: 0px;
+      /* border-collapse用于设置边框是折叠还是展开 */
+      /* 默认为separate（展开） */
+      border-collapse:collapse;
+      margin: 0 auto;
+    }
+    table td{
+      border: 1px solid red;
+      /* 用于设置单元格内容与边框的间距 */
+      padding: 20px;
+    }
+    table thead tr td{
+      text-align: center;
+    }
+  </style>
+</body>
+</html>
