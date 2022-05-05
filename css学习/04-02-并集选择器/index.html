@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 要求1：将熊大和熊二改成粉色 */
+    /* body div:nth-child(1),body p:nth-child(2){
+      color:pink;
+    } */
+
+    /* 要求2：将熊大和熊二改成红色，把小猪一家改成粉色 */
+    div,p{
+      /* 并集选择器使用,逗号分隔，表示和的意思；当多个元素有相同的属性时使用 */
+      color:red;
+    }
+    .pig>li{
+      color:pink;
+    }
+    body{
+      border:1px solid red;
+    }
+    div.container{
+      background-color:pink;
+      width: 400px;
+      height: 400px;
+      margin:10px;
+      padding: 10px;
+      /* box-sizing有2中模式，默认为content-box */
+      /* content-box：盒子的大小等于400+10+10（盒子本身的大小+margin+padding） */
+      /* border-box：盒子的大小已经包含了margin和padding */
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div>熊大</div>
+  <p>熊二</p>
+  <span>光头强</span>
+  <ul class="pig">
+    <li>小猪佩奇</li>
+    <li>猪爸爸</li>
+    <li>猪妈妈</li>
+  </ul>
+  <div class="container">
+
+  </div>
+</body>
+</html>

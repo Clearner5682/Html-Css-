@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      border:1px solid pink;
+    }
+  </style>
+</head>
+<body>
+  <h4>要想实现单行文字的垂直居中，只需要设置容器的行高和容器的高度一致就可以了</h4>
+  <h4>原理就是行高减去文字本身的高度之后，剩余的高度会被上孔隙和下空隙等分，这样就把文字撑到div的中间了</h4>
+  <h4>简单理解：行高的上空隙和下空隙把文字挤到中间了。如果行高小于盒子高度，文字会偏上（左上原则），如果行高大于盒子高度文字会偏下</h4>
+  <img src="./img1.png" alt="">
+  <br>
+  <div class="container">你好啊，李银河</div>
+</body>
+</html>
