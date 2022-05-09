@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.imageContainer{
+      width: 300px;
+      height: 300px;
+      background-image: url('./images/王者荣耀.png');
+      background-repeat: no-repeat;
+      background-color: #999999;
+      float: left;
+      margin: 30px;
+    }
+
+    .div1{
+      /* 背景图片位置在左上 */
+      /* 两个方位的前后位置是可以调换的 */
+      background-position: top left;
+    }
+
+    .div2{
+      /* 背景图片位置在右上 */
+      background-position: top right;
+    }
+
+    .div3{
+      /* 背景图片的位置在下中 */
+      background-position: bottom center;
+    }
+
+    .div4{
+      /* 背景图片的位置在正中 */
+      /* 当只指定一个方位时，另一个方位默认就是center */
+      /* 所以这里的background-position: center等价于background-position: center center */
+      background-position: center;
+      /* background-position: center center; */
+    }
+
+    .clearfix{
+      clear:both;
+    }
+  </style>
+</head>
+<body>
+  <div class="imageContainer div1">
+
+  </div>
+   <div class="imageContainer div2">
+
+  </div>
+  <div class="clearfix"></div>
+   <div class="imageContainer div3">
+
+  </div>
+   <div class="imageContainer div4">
+
+  </div>
+</body>
+</html>

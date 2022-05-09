@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h3{
+      width: 118px;
+      height: 40px;
+      border:1px solid pink;
+      background-image: url('./images/title_sprite.png');
+      background-repeat: no-repeat;
+      /* 让盒子中的文字垂直居中 */
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: 400;
+      /* 让背景图片位置为靠左、垂直居中 */
+      /* 可以看出背景图片的位置控制很简单 */
+      background-position: left center;
+      /* 由于这张图片是雪碧图，因此还要在X轴偏移一下位置 */
+      background-position-x: -35px;
+      /* 文字缩进1.5个字符，刚好让图片在文字的左边 */
+      text-indent: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h3>
+    成长守护平台
+  </h3>
+</body>
+</html>
