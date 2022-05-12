@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      color:pink;
+      /* 注意这种行高的写法：20px/1.5表示行高为字体大小的1.5倍 */
+      /* 由于行高和字体都会继承，因此p元素的行高为20px*1.5=30px */
+      font: 20px/1.5 Microsoft YaHei;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><h4>子元素可以继承父元素的样式，比如：text-、font-、line-以及color这些属性</h4></li>
+    <li><h4>像padding、margin这些属性不会继承</h4></li>
+  </ul>
+  <div style="background:url('./1.png') no-repeat;height:200px">
+
+  </div>
+  <div>
+    <p>你好啊，李银河</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      div.container {
+        width: 200px;
+        height: 200px;
+        /* 盒子的边框 */
+        border: 5px solid red;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      div.content-box{
+        /* 盒子有两种模式，默认为content-box，即盒子的width和height是content的大小，还要加上padding、border才是盒子的真实大小 */
+        box-sizing: content-box;
+      }
+
+      div.border-box{
+        /* border-box模式，即盒子的content+padding+border才是width和height的大小 */
+        box-sizing: border-box;
+      }
+
+      div#parent1{
+        background-color: lightgreen;
+      }
+
+      div#parent2{
+        background-color: pink;
+      }
+
+      h4{
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>注意：padding会撑大盒子，margin不会撑大盒子</h4>
+    <h4>注意：div的第一个子元素使用margin-top时，子元素的margin-top会在父元素生效，子元素还是会和父元素贴边</h4>
+    <div id="parent1">
+      <div class="container content-box">你好啊，李银河</div>
+    </div>
+    <div id="parent2">
+      <div class="container border-box">你好啊，李银河</div>
+    </div>
+    <img src="./1.png" alt="">
+  </body>
+</html>
