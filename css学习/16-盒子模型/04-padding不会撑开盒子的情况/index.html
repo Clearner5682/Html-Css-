@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1{
+      background-color: pink;
+      /* 注意：当width或height不指定时，即使设置了padding值，此时padding并不会撑大盒子 */
+      /* 以下面的width为例，当不指定width时，由于h1时块级元素，所以h1元素的宽度就是body的宽度；当指定了width:100%时，h1元素的宽度就是body宽度再加上60px */
+      /* 指定了width:100%之后，可以看到X轴的滚动条 */
+      /* width: 100%; */
+      height: 100px;
+      padding:20px 30px 20px 30px
+    }
+    h2{
+      color:orange;
+    }
+  </style>
+</head>
+<body>
+  <h2>注意：当不指定高度或宽度时，padding并不会撑大盒子</h2>
+  <h1>你好啊，李银河</h1>
+</body>
+</html>
