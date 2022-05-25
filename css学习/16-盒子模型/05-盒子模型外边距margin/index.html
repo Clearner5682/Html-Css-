@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+    }
+    #div1{
+      background-color: pink;
+      /* 表示上下外边距为0，左右外边距为auto */
+      /* 可以让盒子居中对齐，前提是必须是块级元素且设置了width属性 */
+      margin: 0 auto;
+    }
+    #div2{
+      background-color: lightgreen;
+      /* 1.当指定4个值时，依次是上、右、下、左，即顺时针方向 */
+      /* margin: 10px 40px 20px 100px; */
+      /* 2.当指定2个值时，依次是上下、左右 */
+      /* margin: 20px 40px; */
+      /* 3.当指定3个值时，依次是上、左右、下 */
+      margin: 20px 40px 30px;
+    }
+    h3{
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <h3>margin:0 auto可以让块级元素居中对齐，前提是设置了width</h3>
+  <div id="div1">
+
+  </div>
+  <div id="div2">
+
+  </div>
+</body>
+</html>
