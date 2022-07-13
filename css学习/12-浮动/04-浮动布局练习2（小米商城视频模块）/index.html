@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小米商城视频模块</title>
+    <style>
+      body{
+        background-color: #f5f5f5;
+      }
+      .parent{
+        width: 1240px;
+        height: 285px;
+        margin: 0 auto;
+      }
+      .video-list{
+        list-style-type: none;
+        padding: 0px;
+      }
+      .video-item{
+        width: 296px;
+        height: 285px;
+        float: left;
+        background-color: #fff;
+      }
+      .video-item:nth-child(2),
+      .video-item:nth-child(3),
+      .video-item:nth-child(4){
+        margin-left: 14px;
+      }
+      .img-box{
+        width: 296px;
+        height: 180px;
+        margin-bottom: 28px;
+      }
+      .img-box.first{
+        background-image: url('./1.jpg');
+      }
+      .img-box.second{
+        background-image: url('./2.jpg');
+      }
+      .img-box.third{
+        background-image: url('./3.jpg');
+      }
+      .img-box.forth{
+        background-image: url('./4.jpg');
+      }
+      .text-box{
+        text-align: center;
+        font-size: 14px;
+        color: #757575;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <ul class="video-list">
+        <li class="video-item">
+          <div class="img-box first"></div>
+          <div class="text-box">2021年春季新品发布会第一场</div>
+        </li>
+        <li class="video-item">
+          <div class="img-box second"></div>
+          <div class="text-box">Redmi 10X系列发布会</div>
+        </li>
+        <li class="video-item">
+          <div class="img-box third"></div>
+          <div class="text-box">小米10 青春版 发布会</div>
+        </li>
+        <li class="video-item">
+          <div class="img-box forth"></div>
+          <div class="text-box">小米10 8K手机拍大片</div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

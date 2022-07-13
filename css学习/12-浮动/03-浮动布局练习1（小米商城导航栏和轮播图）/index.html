@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小米商城导航栏和轮播图</title>
+  <style>
+    div.parent{
+      width: 1226px;
+      height: 456px;
+      margin: 0 auto;
+      background-image: url(./1.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    div.nav{
+      float: left;
+      width: 236px;
+      height: 456px;
+      background-color: rgba(105, 101, 101, 0.6)
+    }
+    .nav ul{
+      list-style: none;
+      color: #fff;
+      font-size: 14px;
+      /* ul默认是有内边距的，通过padding:0px消除内边距 */
+      padding: 0px;
+    }
+    .nav ul li{
+      display: list-item;
+      /* margin-top: 22px; */
+      height: 42px;
+      /* width: 236px; */
+      padding-left: 30px;
+      line-height: 42px;
+      cursor: pointer;
+    }
+    .nav ul li:hover{
+      background-color:  #ff6700;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="nav">
+      <ul>
+        <li>手机</li>
+        <li>电视</li>
+        <li>笔记本 平板</li>
+        <li>出行 穿戴</li>
+        <li>耳机 音箱</li>
+        <li>家电</li>
+        <li>智能 路由器</li>
+        <li>电源 配件</li>
+        <li>健康 儿童</li>
+        <li>生活 箱包</li>
+      </ul>
+    </div>
+    <div class="swiper"></div>
+  </div>
+</body>
+</html>
