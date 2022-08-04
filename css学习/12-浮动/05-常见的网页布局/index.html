@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见的网页布局</title>
+  <style>
+    *{
+      /* 清除内外边距 */
+      margin: 0;
+      padding: 0;
+    }
+    .top{
+      /* 块级元素不设宽度，与body的宽度相同 */
+      height: 150px;
+      background-color: #ecedf8;
+    }
+    .banner{
+      height: 240px;
+      width: 980px;
+      background-color: #ecedf8;
+      /* 块级元素水平居中对齐 */
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .box{
+      height: 380px;
+      width: 980px;
+      /* 注意：这里box也设置了10px的上下外边距，但是***并不会***导致和banner之间的边距变为20px */
+      /* 总结：外边距只是用来把周围的东西挤开，并不算在盒子的大小里面；也就是说外边距只与自身有关，并不影响其他盒子的距离计算 */
+      margin: 10px auto;
+    }
+    .box ul{
+      list-style: none;
+    }
+    .box ul li{
+      float: left;
+      width: 237px;
+      height: 380px;
+      background-color: #ecedf8;
+      margin-right: 10px;
+    }
+    .box ul li.last{
+      margin-right: 0px;
+    }
+    .footer{
+      height: 150px;
+      background-color: #ecedf8;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">top</div>
+  <div class="banner">banner</div>
+  <div class="box">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li class="last">4</li>
+    </ul>
+  </div>
+  <div class="footer">footer</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+*{
+  /* 清除内外边距 */
+  margin: 0;
+  padding: 0;
+}
+
+.w{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header{
+  height: 42px;
+  margin: 30px auto;
+  background-color: pink;
+}
+
+.logo{
+  float: left;
+  width: 198px;
+  height: 42px;
+  background-image: url('./images/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav{
+  float: left;
+  margin-left: 60px;
+}
+
+.nav ul li{
+  float: left;
+  margin: 0 10px;
+}
+
+.nav ul li a{
+  display: block;
+  height: 42px;
+  padding: 0 10px;
+  line-height: 42px;
+  font-size: 18px;
+  color: #050505;
+}
+
+.nav ul li a:hover{
+  border-bottom: 2px solid #00a4ff;
+  color: #00a4ff;
+}
+
+.search{
+  float: left;
+  width: 412px;
+  height: 42px;
+  margin-left: 50px;
+}
+
+.search input{
+  /* 通过增加浮动来解决input和button之间有缝隙的问题 */
+  float: left;
+  width: 345px;
+  height: 40px;
+  /* 设置文字与边框的间距 */
+  padding-left: 15px;
+  border: 1px solid #00a4ff;
+  border-right: none;
+  color: #bfbfbf;
+  font-size: 14px;
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.search button{
+  float: left;
+  width: 50px;
+  height: 42px;
+  border: 1px solid #00a4ff;
+  background-image: url('./images/btn.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}

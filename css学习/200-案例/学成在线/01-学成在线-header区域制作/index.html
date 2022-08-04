@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学成在线</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="w header">
+    <div class="logo"></div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">职业规划</a></li>
+      </ul>
+    </div>
+    <div class="search">
+      <!-- 浮动只针对块级元素，行内元素和行内块元素在浮动周围显示，也就是说行内元素和行内块元素不会压在浮动的元素上面 -->
+      <!-- input和button都是行内块级元素（表单元素都是行内块元素），他们之间是有缝隙的，所以当它们的宽度之和等于父盒子的宽度时，会导致button被挤到下一行 -->
+      <!-- 可以通过将input和button都设置浮动来解决（浮动之后元素之间就没有缝隙了） -->
+      <input type="text" placeholder="输入关键词">
+      <button></button>
+    </div>
+  </div>
+</body>
+</html>
