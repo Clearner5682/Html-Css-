@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学成在线</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 头部区域开始 -->
+    <div class="w header">
+      <div class="logo"></div>
+      <div class="nav">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">课程</a></li>
+          <li><a href="#">职业规划</a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <!-- 浮动只针对块级元素，行内元素和行内块元素在浮动周围显示，也就是说行内元素和行内块元素不会压在浮动的元素上面 -->
+        <!-- input和button都是行内块级元素（表单元素都是行内块元素），他们之间是有缝隙的，所以当它们的宽度之和等于父盒子的宽度时，会导致button被挤到下一行 -->
+        <!-- 可以通过将input和button都设置浮动来解决（浮动之后元素之间就没有缝隙了） -->
+        <input type="text" placeholder="输入关键词" />
+        <button></button>
+      </div>
+      <div class="user">
+        <div class="picture"></div>
+        <div class="username"><p>hongyan</p></div>
+      </div>
+    </div>
+    <!-- 头部区域结束 -->
+    <div class="banner">
+      <div class="w">
+        <div class="subnav">
+          <ul>
+            <!-- 小三角的做法：&lt;&gt; -->
+            <li>
+              <a href="#">前端开发 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">后端开发 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">移动开发 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">人工智能 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">商业预测 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">云计算&大数据 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">运维&测试 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">UI设计 <span>&gt;</span></a>
+            </li>
+            <li>
+              <a href="#">产品 <span>&gt;</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="course">
+          <h2>我的课程表</h2>
+          <div class="bd">
+            <ul>
+              <li>
+                <h4>继续学习 程序语言设计</h4>
+                <p>正在学习-使用对象</p>
+              </li>
+              <li>
+                <h4>继续学习 程序语言设计</h4>
+                <p>正在学习-使用对象</p>
+              </li>
+              <li>
+                <h4>继续学习 程序语言设计</h4>
+                <p>正在学习-使用对象</p>
+              </li>
+            </ul>
+            <a href="#">全部课程</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
