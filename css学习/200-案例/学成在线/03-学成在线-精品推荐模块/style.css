@@ -1,0 +1,343 @@
+*{
+  /* 清除内外边距 */
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #f3f5f7;
+}
+
+.w{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* 头部区域开始 */
+.header{
+  height: 42px;
+  margin: 30px auto;
+  /* background-color: pink; */
+}
+
+.logo{
+  float: left;
+  width: 198px;
+  height: 42px;
+  background-image: url('./images/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav{
+  float: left;
+  margin-left: 60px;
+}
+
+.nav ul li{
+  float: left;
+  margin: 0 10px;
+}
+
+.nav ul li a{
+  display: block;
+  height: 42px;
+  padding: 0 10px;
+  line-height: 42px;
+  font-size: 18px;
+  color: #050505;
+}
+
+.nav ul li a:hover{
+  border-bottom: 2px solid #00a4ff;
+  color: #00a4ff;
+}
+
+.search{
+  float: left;
+  width: 412px;
+  height: 42px;
+  margin-left: 50px;
+}
+
+.search input{
+  /* 通过增加浮动来解决input和button之间有缝隙的问题 */
+  float: left;
+  width: 345px;
+  height: 40px;
+  /* 设置文字与边框的间距 */
+  padding-left: 15px;
+  border: 1px solid #00a4ff;
+  color: #bfbfbf;
+  font-size: 14px;
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.search button{
+  float: left;
+  width: 50px;
+  height: 42px;
+  border: 1px solid #00a4ff;
+  background-image: url('./images/btn.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.user{
+  float: left;
+  height: 42px;
+}
+
+.user .picture{
+  float: left;
+  width: 30px;
+  height: 42px;
+  margin-left: 50px;
+  margin-right: 10px;
+  background-image: url('./images/user.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.user .username{
+  float:left;
+  width: 60px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 14px;
+  color: #666;
+}
+
+.user .username p{
+  /* 文字超出限制用...代替 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 头部区域结束 */
+
+/* banner区域开始 */
+.banner{
+  height: 421px;
+  background-color: #1c036c;
+}
+.banner .w{
+  height: 421px;
+  background-image: url('./images/banner2.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.subnav{
+  float: left;
+  width: 190px;
+  height: 421px;
+  background-color: rgba(0, 0, 0, .3);
+}
+.subnav ul li{
+  height: 45px;
+  line-height: 45px;
+  padding: 0 20px;
+}
+.subnav ul li a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+}
+.subnav ul li a:hover{
+  color: #00a4ff;
+}
+.subnav ul li a span{
+  float: right;
+}
+.course{
+  float:right;
+  width: 230px;
+  height: 300px;
+  /* 浮动的盒子不会有外边距合并（塌陷）的问题 */
+  margin-top: 50px;
+}
+.course h2{
+  height: 48px;
+  line-height: 48px;
+  background-color: #9bceea;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+.course .bd{
+  height: 252px;
+  background-color: #fff;
+  padding: 0 20px;
+}
+.course .bd ul li {
+  padding: 13px 0;
+  border-bottom: 1px solid #ccc;
+}
+.course .bd ul li h4{
+  font-size: 16px;
+  color: #4e4e4e;
+}
+.course .bd ul li p {
+  font-size: 12px;
+  color: #a5a5a5;
+}
+.course a{
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  margin-top: 5px;
+  border: 1px solid #00a4ff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #00a4ff;
+}
+/* banner区域结束 */
+
+/* 精品推荐区域开始 */
+.recommand{
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, .1);
+  margin-top: 10px;
+  /* 行高是会继承给孩子的 */
+  line-height: 60px;
+}
+.recommand h3{
+  float: left;
+  margin-left: 30px;
+  font-size: 16px;
+  color: #00a4ff;
+}
+.recommand ul{
+  float: left;
+  margin-left: 30px;
+}
+.recommand ul li{
+  float: left;
+}
+.recommand ul li a{
+  padding: 0 30px;
+  color: #050505;
+  font-size: 16px;
+  border-left: 1px solid #ccc;
+}
+.recommand .modify{
+  float: right;
+  margin-right: 30px;
+  font-size: 14px;
+  color: #00a4ff;
+}
+/* 精品推荐区域结束 */
+
+/* 精品推荐核心区域开始 */
+.box{
+  margin-top: 30px;
+}
+.box-head{
+  height: 45px;
+}
+.box-head h3{
+  float: left;
+  font-size: 20px;
+  color: #494949;
+}
+.box-head a{
+  float:right;
+  font-size: 12px;
+  color: #a5a5a5;
+  /* 浮动的盒子不用担心外边距合并的问题 */
+  margin-top: 10px;
+  margin-right: 30px;
+}
+.box-bottom ul{
+  /* 原本一行5个li都设置margin-right为15px之后5个li的宽度肯定会超过ul的宽度（100%），因此一行只能放的下4个li，多余的li会被挤到下一行 */
+  /* 一种思路是给每行的最后一个li设置margin-right为0，这样就不会超过ul宽度了，但是实现起来比较麻烦 */
+  /* 另一种思路是将ul的宽度加大到5*(li的宽度+margin-right的值)，即ul的宽度比版心宽度大一点，反正多出的宽度时margin-right的值，是看不见的 */
+  width: 1225px;
+}
+.box-bottom ul li{
+  width: 228px;
+  height: 270px;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+.box-bottom ul li img{
+  /* 图片的宽度比li的宽度略大，可以通过指定宽度100%让图片宽度和父盒子一样 */
+  width: 100%;
+}
+.box-bottom ul li h4{
+  margin: 20px 20px 20px 25px;
+  font-size: 14px;
+  color: #050505;
+  font-weight: 400;
+}
+.box-bottom ul li div{
+  margin: 0 20px 0 25px;
+  font-size: 12px;
+  color: #999;
+}
+.box-bottom ul li div span{
+  color: #ff7c2d;
+}
+.clearfix{
+  clear: both;
+}
+/* 精品推荐核心区域结束 */
+
+/* footer模块开始 */
+div.footer{
+  height: 415px;
+  background-color: #fff;
+}
+.footer .w{
+  padding-top: 35px;
+}
+.footer .w .copyright{
+  float: left;
+}
+.footer .w .links{
+  float: right;
+}
+.copyright p{
+  margin: 20px 0px 15px 0px;
+}
+.copyright .app{
+  display: block;
+  width: 118px;
+  height: 33px;
+  color: #00a4ff;
+  border: 1px solid #00a4ff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 33px;
+}
+.links dl{
+  float: left;
+  margin-left: 100px;
+}
+.links dl dt{
+  margin-bottom: 15px;
+}
+.links dl dt a{
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+.links dl dd a{
+  font-size: 14px;
+  color: #333;
+}
+/* footer模块结束 */
