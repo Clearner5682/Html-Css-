@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .divText {
     float: left;
     background-color: aqua;
@@ -28,6 +33,12 @@
     top: 100px;
 }
 
+.div1-1{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
 .div2{
     width: 200px;
     height: 200px;
@@ -45,6 +56,12 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
+}
+
+.div4{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
 }
 
 .footer{

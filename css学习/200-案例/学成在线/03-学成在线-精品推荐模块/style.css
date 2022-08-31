@@ -267,6 +267,8 @@ a{
   width: 1225px;
 }
 .box-bottom ul li{
+  /* 子绝父相 */
+  position: relative;
   width: 228px;
   height: 270px;
   float: left;
@@ -274,8 +276,9 @@ a{
   margin-bottom: 15px;
   background-color: #fff;
 }
-.box-bottom ul li img{
+.box-bottom ul li > img{
   /* 图片的宽度比li的宽度略大，可以通过指定宽度100%让图片宽度和父盒子一样 */
+  /* 只给li的亲儿子img指定宽度100% */
   width: 100%;
 }
 .box-bottom ul li h4{
@@ -294,6 +297,11 @@ a{
 }
 .clearfix{
   clear: both;
+}
+.box-bottom ul li .hot{
+  position: absolute;
+  right: -4px;
+  top: 4px;
 }
 /* 精品推荐核心区域结束 */
 
