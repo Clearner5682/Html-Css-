@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位的叠放顺序（z-index）</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+    .red {
+      background-color: red;
+      top:0px;
+      left: 0px;
+    }
+    .green {
+      background-color: green;
+      top: 50px;
+      left: 50px;
+      /* z-index为1，大于auto，所以绿色的盒子会盖住其他定位的盒子 */
+      z-index: 1;
+    }
+    .yellow {
+      background-color: yellow;
+      top:100px;
+      left: 100px;
+    }
+    p {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="red"></div>
+  <div class="green"></div>
+  <div class="yellow"></div>
+  <p>默认情况下z-index的值为auto，z-index越大，则盒子越靠上</p>
+  <p>当z-index相同时，按照书写顺序，后来者居上</p>
+  <p style="color:red">只有定位的盒子才有z-index属性</p>
+</body>
+</html>

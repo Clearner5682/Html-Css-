@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>粘性定位</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .search {
+      /* 1.粘性定位同时具备相对定位和固定定位的特点 */
+      /* 2.粘性定位必须指定top\bottom\left\right中的其中一个 */
+      /* 3.比如这里指定top:0px。即当它离可视窗口的顶部为0px之前，它是相对定位的（属于标准流，占据原本的位置）；一旦它达到top:0px的条件，它就会变成固定定位（脱标）*/
+      position: sticky;
+      top: 0px;
+      width: 800px;
+      height: 80px;
+      margin: 100px auto;
+      background-color: pink;
+    }
+    .content {
+      width: 800px;
+      height: 1400px;
+      margin: 0 auto;
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="search">我是搜索框</div>
+  <div class="content">
+    我是内容：
+    <p>1.粘性定位同时具备相对定位和固定定位的特点</p>
+    <p>2.粘性定位必须指定top\bottom\left\right中的其中一个</p>
+    <p>3.比如这里指定top:0px。即当它离可视窗口的顶部为0px之前，它是相对定位的（属于标准流，占据原本的位置）；一旦它达到top:0px的条件，它就会变成固定定位（脱标）</p>
+  </div>
+</body>
+</html>
