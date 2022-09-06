@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆网案例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .video-box {
+            position: relative;
+            width: 448px;
+            height: 252px;
+            margin: 50px auto;
+            background-image: url('./images/tudou.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .video-mask {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 448px;
+            height: 252px;
+            background-color: rgba(0, 0, 0, .3);
+        }
+        /* 注意：video-mask隐藏之后是无法触发hover的 */
+        /* 因此这里转换思想，当video-box有鼠标经过时显示它里面的video-mask */
+        .video-box:hover .video-mask {
+            /* 这是的display:block是显示元素的意思 */
+            display: block;
+        }
+        .arr {
+            position: absolute;
+            top:50%;
+            margin-top: -17px;
+            left: 50%;
+            margin-left: -17px;
+            width: 34px;
+            height: 34px;
+            background-image: url('./images/arr.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-box">
+        <div class="video-mask">
+            <div class="arr">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        (function(){
+            var divArr=document.getElementsByClassName('arr')[0];
+            divArr.addEventListener('click',function($event){
+                alert('hello');
+            })
+        })()
+    </script>
+</body>
+</html>
