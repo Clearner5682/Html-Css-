@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css三角的做法</title>
+    <style>
+      div {
+        margin: 20px;
+      }
+      .square {
+        float: left;
+        width: 0;
+        height: 0;
+        /* 虽然盒子的高度和宽度为0，但是边框把盒子撑大了 */
+        /* 通过只显示一个方向的边框，就实现了css三角的效果 */
+        border-top: 10px solid red;
+        border-right: 10px solid green;
+        border-bottom: 10px solid yellow;
+        border-left: 10px solid blue;
+      }
+      .triangle {
+        float: left;
+        width: 0;
+        height: 0;
+        /* 为了照顾兼容性 */
+        font-size: 0;
+        line-height: 0;
+        border: 10px solid transparent;
+      }
+      .triangle.bottom {
+        border-top-color: pink;
+      }
+      .triangle.top {
+        border-bottom-color: pink;
+      }
+      .triangle.left {
+        border-right-color: pink;
+      }
+      .triangle.right {
+        border-left-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square"></div>
+    <div class="triangle top"></div>
+    <div class="triangle bottom"></div>
+    <div class="triangle left"></div>
+    <div class="triangle right"></div>
+  </body>
+</html>

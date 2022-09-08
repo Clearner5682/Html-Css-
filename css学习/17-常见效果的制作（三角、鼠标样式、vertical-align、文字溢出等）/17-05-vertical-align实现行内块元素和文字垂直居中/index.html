@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vertical-align实现行内块元素和文字垂直居中</title>
+  <style>
+    img.mi2 {
+      width: 50px;
+      height: 50px;
+      /* 默认情况下行内块元素和文字的基线对齐 */
+      /* 通过vertical-align可以改变行内块元素和文字的对齐方式 */
+      /* vertical-align:middle=>行内块元素和文字的中线对齐 */
+      vertical-align: middle;
+      /* vertical-align:top=>行内块元素和文字的顶线对齐 */
+      /* vertical-align: top; */
+      /* vertical-align:bottom=>行内块元素和文字的底线对齐 */
+      /* vertical-align: bottom; */
+      /* vertical-align:base=>行内块元素和文字的基线对齐 */
+      /* vertical-align: baseline; */
+    }
+  </style>
+</head>
+<body>
+  <h2>注意：vertical-align只能作用于行内块元素</h2>
+  <img class="mi2" src="./images/logo-mi2.png" alt="">你好啊，李银河
+  <br>
+  <br>
+  <img src="./images/文字的基线-中线-顶线-底线.jpg" alt="">
+</body>
+</html>

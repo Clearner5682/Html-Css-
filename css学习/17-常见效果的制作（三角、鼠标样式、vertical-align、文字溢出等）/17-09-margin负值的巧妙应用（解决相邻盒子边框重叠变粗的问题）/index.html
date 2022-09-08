@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>margin负值的巧妙应用（解决相邻盒子边框重叠变粗的问题）</title>
+    <style>
+      li {
+        list-style: none;
+      }
+      .clearfix {
+        clear: both;
+      }
+      ul li {
+        float: left;
+        width: 150px;
+        height: 200px;
+        border: 1px solid red;
+      }
+      .negative li {
+        /* 巧妙的通过margin-left:-1px让盒子都往左边移动一个像素，这样右边盒子的左边框刚好压住左边盒子的右边框 */
+        /* 这样原本重叠之后2个像素宽度的边框变成了1个像素的宽度 */
+        margin-left: -1px;
+      }
+      .negative li:hover {
+        /* 但是想要鼠标经过li时改变li的边框颜色时会有个问题：左边盒子的右边框被压住了，颜色变不了 */
+        /* 解决方案有2种： */
+        /* 1.鼠标经过的盒子变为相对定位，利用有定位的元素会盖住没定位的元素 */
+        /* 2.给鼠标经过的盒子提升z-index的值，这样它也能盖住其他元素了 */
+        border-color: blue;
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <div class="clearfix"></div>
+    <ul class="negative">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </body>
+</html>

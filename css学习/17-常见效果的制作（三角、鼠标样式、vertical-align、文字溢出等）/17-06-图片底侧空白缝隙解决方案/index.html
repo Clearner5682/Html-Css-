@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片底侧空白缝隙解决方案</title>
+  <style>
+    div {
+      border: 2px solid red;
+    }
+    div img {
+      /* 方案1：设置vertical-align:bottom，因为img是行内块元素，vertical-align默认值是基线对齐，所以这个缝隙就是基线和底线之间的距离 */
+      /* 所以通过设置vertical-align:bottom可以消除这个缝隙 */
+      /* vertical-align: bottom; */
+
+      /* 方案2：将img元素转化成块级元素，因为块级元素没有vertical-align属性 */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="./images/ldh.png" alt="">
+  </div>
+</body>
+</html>

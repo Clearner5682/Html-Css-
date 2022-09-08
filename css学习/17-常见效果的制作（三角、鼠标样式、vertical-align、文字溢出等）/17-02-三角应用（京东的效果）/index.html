@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三角应用（京东的效果）</title>
+  <style>
+    body {
+      background-color: #fff;
+    }
+
+    .main {
+      position: relative;
+      margin: 50px auto;
+      width: 150px;
+      height: 250px;
+      background-color: #fff;
+      border: 1px solid #e5e5e5;
+    }
+    .triangle {
+      position: absolute;
+      left:50%;
+      margin-left: -10px;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+    }
+    .triangle.top {
+      border-bottom-color: #e5e5e5;
+      margin-top: -20px;
+      z-index: 1;
+    }
+    .triangle.bottom {
+      border-bottom-color: #fff;
+      margin-top: -19px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <!-- 注意：这里能把三角做出1个像素边框的效果是因为用有颜色的三角压在了白色三角的上面 -->
+    <!-- 通过margin-top相差1个像素，刚好让我们看到了1个像素宽度的有颜色边框 -->
+    <div class="triangle top"></div>
+    <div class="triangle bottom"></div>
+  </div>
+</body>
+</html>
