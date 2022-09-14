@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: scroll;
+      }
+      .previewContainer {
+        position: absolute;
+        display: none;
+        border: 1px solid #e4e7ed;
+        border-radius: 5px;
+        text-align: center;
+        padding: 5px;
+      }
+      .previewContainer img {
+        height: 480px;
+        vertical-align: middle;
+      }
+      #myTable {
+        margin: 300px auto;
+        border-collapse: collapse;
+      }
+      #myTable tr td:nth-child(1) {
+        width: 100px;
+      }
+      #myTable tr td:nth-child(2) {
+        width: 250px;
+      }
+      .imageContainer {
+        display: inline-block;
+        text-align: center;
+        background-color: pink;
+      }
+      .imageContainer img {
+        width: 64px;
+        vertical-align: middle;
+        /* cursor: pointer; */
+      }
+      #myTable td {
+        border: 1px solid red;
+      }
+      .imageTd {
+        position: relative;
+      }
+      .imageTd:hover .previewContainer {
+        display: block;
+      }
+      .triangle {
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        margin-top: -10px;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+      }
+      .triangle.in {
+        border-right-color: #fff;
+        z-index: 100;
+      }
+      .triangle.out {
+        border-right-color: #e1e1e1;
+        left: -21px;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="myTable">
+      <tr>
+        <td>Image</td>
+        <td>描述</td>
+      </tr>
+      <tr>
+        <td class="imageTd">
+          <div
+            class="imageContainer"
+            onmouseenter="mouseEnterHandler(event)"
+            onmouseleave="mouseLeaveHandler(event)"
+          >
+            <img
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.tuniucdn.com%2Ffilebroker%2Fcdn%2Fsnc%2Fc9%2F87%2Fc987cef59de293140750931e709c8c85_w800_h0_c0_t0.jpg&refer=http%3A%2F%2Fm.tuniucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665216098&t=67cbba7b1a3a652a5a4ea4333f9e68e8"
+              alt=""
+            />
+          </div>
+        </td>
+        <td>我是图片的描述11</td>
+      </tr>
+      <tr>
+        <td class="imageTd">
+          <div
+            class="imageContainer"
+            onmouseenter="mouseEnterHandler(event)"
+            onmouseleave="mouseLeaveHandler(event)"
+          >
+            <img
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.tuniucdn.com%2Ffilebroker%2Fcdn%2Fsnc%2Fc9%2F87%2Fc987cef59de293140750931e709c8c85_w800_h0_c0_t0.jpg&refer=http%3A%2F%2Fm.tuniucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665216098&t=67cbba7b1a3a652a5a4ea4333f9e68e8"
+              alt=""
+            />
+          </div>
+        </td>
+        <td>我是图片的描述22</td>
+      </tr>
+      <tr>
+        <td class="imageTd">
+          <div
+            class="imageContainer"
+            onmouseenter="mouseEnterHandler(event)"
+            onmouseleave="mouseLeaveHandler(event)"
+          >
+            <img
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.tuniucdn.com%2Ffilebroker%2Fcdn%2Fsnc%2Fc9%2F87%2Fc987cef59de293140750931e709c8c85_w800_h0_c0_t0.jpg&refer=http%3A%2F%2Fm.tuniucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665216098&t=67cbba7b1a3a652a5a4ea4333f9e68e8"
+              alt=""
+            />
+          </div>
+        </td>
+        <td>我是图片的描述33</td>
+      </tr>
+      <tr>
+        <td class="imageTd">
+          <div
+            class="imageContainer"
+            onmouseenter="mouseEnterHandler(event)"
+            onmouseleave="mouseLeaveHandler(event)"
+          >
+            <img
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.tuniucdn.com%2Ffilebroker%2Fcdn%2Fsnc%2Fc9%2F87%2Fc987cef59de293140750931e709c8c85_w800_h0_c0_t0.jpg&refer=http%3A%2F%2Fm.tuniucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665216098&t=67cbba7b1a3a652a5a4ea4333f9e68e8"
+              alt=""
+            />
+          </div>
+        </td>
+        <td>我是图片的描述44</td>
+      </tr>
+    </table>
+
+    <div class="previewContainer">
+      <img
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fm.tuniucdn.com%2Ffilebroker%2Fcdn%2Fsnc%2Fc9%2F87%2Fc987cef59de293140750931e709c8c85_w800_h0_c0_t0.jpg&refer=http%3A%2F%2Fm.tuniucdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665216098&t=67cbba7b1a3a652a5a4ea4333f9e68e8"
+        alt=""
+      />
+      <div class="triangle in"></div>
+      <div class="triangle out"></div>
+    </div>
+
+    <script>
+      function mouseEnterHandler($event) {
+        var clientX = $event.clientX;
+        var clientY = $event.clientY;
+        var offsetX = $event.offsetX;
+        var offsetY = $event.offsetY;
+        var imageContainerWidth = $event.srcElement.clientWidth;
+        var imageContainerHeight = $event.srcElement.clientHeight;
+        console.log(
+          "mouseEnter",
+          $event,
+          clientX,
+          clientY,
+          offsetX,
+          offsetY,
+          imageContainerWidth,
+          imageContainerHeight
+        );
+        var previewContainer =
+          document.getElementsByClassName("previewContainer")[0];
+        previewContainer.style.display = "block";
+        // previewContainer.style.border = "1px solid #e4e7ed";
+        // previewContainer.style.border_radius = "5px";
+        previewContainer.style.left =
+          clientX - offsetX + imageContainerWidth + 12 + "px";
+        previewContainer.style.top = clientY - offsetY + "px";
+        // 往上偏移previewContainer的高度（算上padding和border）一半，还要减去imageContainer高度的一半
+        previewContainer.style.margin = "-222px 0 0 0";
+      }
+
+      function mouseLeaveHandler($event) {
+        console.log("mouseLeave", $event);
+        var previewContainer =
+          document.getElementsByClassName("previewContainer")[0];
+        previewContainer.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

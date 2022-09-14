@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三角强化</title>
+  <style>
+    .triangle {
+      width: 0;
+      height: 0;
+      border: 0px solid transparent;
+      border-right-color: red;
+      border-width: 50px 25px 0px 0px;
+    }
+    .box {
+      width: 150px;
+      height: 24px;
+      /* 这里通过设置行高等于高度，让2个span的高度和box的高度一样了 */
+      line-height: 24px;
+      margin: 100px auto;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid red;
+    }
+    .box .new {
+      position: relative;
+      display: block;
+      float: left;
+      width: 90px;
+      background-color: red;
+      color: #fff;
+      font-weight: 700;
+    }
+    .new i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-color:transparent #fff transparent transparent;
+      border-style: solid;
+      border-width: 24px 10px 0 0;
+    }
+    .box .old {
+      color: #bbb;
+      font-size: 12px;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <!-- 如何做出一个直角三角形？ -->
+  <div class="triangle"></div>
+  <!-- 京东秒杀价格的做法 -->
+  <div class="box">
+    <span class="new">¥1650<i></i></span>
+    <span class="old">¥5000</span>
+  </div>
+</body>
+</html>

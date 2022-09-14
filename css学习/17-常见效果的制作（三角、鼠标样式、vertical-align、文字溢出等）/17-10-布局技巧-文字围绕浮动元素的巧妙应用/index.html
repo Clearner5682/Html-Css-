@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字围绕浮动元素的巧妙应用</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        width: 300px;
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #ebe7e5;
+      }
+      .image-box {
+        float: left;
+        height: 100px;
+      }
+      p {
+        margin: 0;
+      }
+      .clearfix {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div class="image-box">
+          <img src="./images/1.jpg" alt="">
+        </div>
+        <p>江苏女排11人残阵出战全锦赛！仅剩2主攻1接应，吴梦洁周页彤无缘</p>
+        <div class="clearfix"></div>
+      </li>
+      <li>
+        <div class="image-box">
+          <img src="./images/2.jpg" alt="">
+        </div>
+        <p>瓜帅：哈兰德的实力还没有见顶 合作时间更长会更强</p>
+        <div class="clearfix"></div>
+      </li>
+      <li>
+        <div class="image-box">
+          <img src="./images/3.jpg" alt="">
+        </div>
+        <p>76人新动态：恩比德训练照，哈登举办活动，三巨头能力值联盟第一</p>
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+  </body>
+</html>
