@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3新增的属性（特性）选择器</title>
+  <style>
+    /* 1.选择具有value属性的input元素 */
+    input[value] {
+      color: red;
+    }
+    /* 2.选择color特性为123的input属性 */
+    input[color=pink] {
+      color: pink;
+    }
+    input[type=password] {
+      color:green;
+    }
+    /* 3.选择类名以icon开头的div元素 */
+    div[class^=icon] {
+      /* class$=icon表示类名以icon结尾 */
+      /* class*=icon表示类名包含icon */
+      border: 1px solid red;
+    }
+    /* 注意：类名选择器、属性（特性）选择器、伪类选择器的权重都是10 */
+    /* 所以这里再通过类名设置边框是不会生效的，因为这里权重是10而前面的div[class^=icon]的权重是11 */
+    div.icon1 {
+      border: 1px solid skyblue;
+    }
+  </style>
+</head>
+<body>
+  <!-- 1.选择具有某个属性的元素 -->
+  <input type="text" value="" id="">
+  <input type="text" id="">
+  <hr>
+  <!-- 2.选择属性为某个值的元素 -->
+  <input type="text" color="pink" id="">
+  <input type="text" id="">
+  <input type="password" id="">
+  <hr>
+  <!-- 3.选择属性以某个值开头的元素 -->
+  <div class="icon1">图标1</div>
+  <div class="icon2">图标2</div>
+  <div class="icon3">图标3</div>
+</body>
+</html>

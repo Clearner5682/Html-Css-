@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>结构伪类选择器-选择第n个元素</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul li:first-child,
+      ul li:last-child {
+        color: orange;
+      }
+      /* 1.nth-child参数为数字 */
+      ul li:nth-child(2) {
+        color: red;
+      }
+      /* 2.nth-child参数为even(奇数)或odd(偶数)，实现隔行变色 */
+      #ol1 li:nth-child(even) {
+        background-color: orange;
+      }
+      #ol1 li:nth-child(odd) {
+        background-color: lightblue;
+      }
+      /* 3.nth-child参数为n（注意必须为n，不能为别的），n从0开始一直到超出范围，相当于选择#ol2下面的所有li */
+      #ol2 li:nth-child(n) {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <!-- 注意加入了这个div之后，li就是ul的第2个至第6个孩子 -->
+      <!-- 因此此时使用ul li:nth-child(1)时是不会生效的 -->
+      <div>我是打酱油的</div>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <hr />
+    <ol id="ol1">
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+    </ol>
+    <ol id="ol2">
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+    </ol>
+  </body>
+</html>

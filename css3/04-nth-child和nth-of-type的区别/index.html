@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nth-child和nth-of-type的区别</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* ul div:nth-child(1)的执行顺序是先找ul下的第1个孩子，找到之后再判断是不是div元素，是则选择，不是则不选择 */
+    /* 由于第ul的第一个孩子是p元素，所以该选择器选择不到任何元素 */
+    ul div:nth-child(1){
+      background-color: red;
+    }
+    /* ul div:nth-of-type(1)的执行顺序是先找ul下的div元素，找到之后再选择其中的第一个div元素 */
+    ul div:nth-of-type(1) {
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <p>光头强</p>
+    <div>熊大</div>
+    <div>熊二</div>
+  </ul>
+</body>
+</html>
