@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆网案例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .video-box {
+            position: relative;
+            width: 448px;
+            height: 252px;
+            margin: 50px auto;
+            background-image: url('./images/tudou.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .video-box::before {
+            content: '';
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            /* 绝对定位的盒子具备行内块元素的特性，可以直接给高度和宽度 */
+            width: 448px;
+            height: 252px;
+            background-color: rgba(0, 0, 0, .3);
+        }
+        .video-box:hover::before,
+        .video-box:hover::after {
+            display: block;
+        }
+        .video-box::after {
+            content: '';
+            display: none;
+            position: absolute;
+            top:50%;
+            margin-top: -17px;
+            left: 50%;
+            margin-left: -17px;
+            width: 34px;
+            height: 34px;
+            background-image: url('./images/arr.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-box">
+    </div>
+    <button class="arr" style="width:100px;height:30px;background-color:orange">test</button>
+    <script>
+        (function(){
+            var divArr=document.getElementsByClassName('arr')[0];
+            divArr.addEventListener('click',function($event){
+                alert('hello');
+            })
+        })()
+    </script>
+</body>
+</html>

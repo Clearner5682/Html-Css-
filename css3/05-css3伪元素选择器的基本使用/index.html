@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪元素选择器的基本使用</title>
+  <style>
+    div {
+      border: 1px solid green;
+    }
+    /* before伪元素会被作为第一个孩子添加到父元素内部 */
+    /* 伪元素的权重为1 */
+    div::before {
+      /* content用于指定伪元素内的文字 */
+      /* 注意：content是必须的，否则该伪元素不会起作用 */
+      /* 设置成content:''也是可以的，但是不能没有content */
+      content: 'Before Content';
+      background-color: red;
+      display: inline-block;
+      /* 伪元素默认是行内元素，无法直接设置宽和高，除非强制转化成块元素或行内块元素 */
+      width: 100px;
+      height: 50px;
+    }
+    /* after伪元素会被作为最后一个孩子添加到父元素内部 */
+    div::after {
+      content: 'After Content';
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <h3>之所以被称为伪元素是因为它和其他元素一样都有盒子模型，但是在html文档树中却又找不到它</h3>
+  <div>
+    你好啊，李银河
+  </div>
+</body>
+</html>

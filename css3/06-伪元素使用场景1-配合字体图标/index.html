@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪元素使用场景1-配合字体图标</title>
+    <style>
+      div {
+        position: relative;
+        width: 200px;
+        height: 24px;
+        border: 1px solid red;
+      }
+      div::after {
+        position: absolute;
+        right: 0;
+        /* svg作为伪元素的content使用 */
+        content: url('./svg/down.svg');
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        /* svg作为伪元素的background使用 */
+        /* background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="red" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"%2F%3E%3C%2Fsvg%3E'); */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      
+    </div>
+  </body>
+</html>
