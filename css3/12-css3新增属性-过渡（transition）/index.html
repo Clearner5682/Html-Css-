@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3新增属性-过渡(transition)</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /* 过渡效果常常搭配hover来使用，注意：谁需要过渡效果就把transition定义在谁的样式上 */
+      /* transition: 需要过渡效果的属性   花费的时间(秒)   运动曲线(可省略)   几秒后开始(可省略)   ; */
+      /* transition: width 0.5s; */
+      /* 如果想要给多个属性变化都加上过渡效果，可以使用逗号来分隔 */
+      /* transition: width 0.5s, height 0.5s; */
+      /* 如果想要所有变化的属性都加上过渡效果，可以使用all来代替属性 */
+      transition: all 0.5s;
+    }
+    .container:hover {
+      width: 400px;
+      height: 400px;
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container"></div>
+  <br>
+  <img src="./images/1.jpg" alt="">
+</body>
+</html>
