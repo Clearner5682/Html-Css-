@@ -1,0 +1,84 @@
+/* 版心 */
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 快捷导航模块 */
+.shortcut {
+  height: 31px;
+  line-height: 31px;
+  background-color: #f1f1f1;
+}
+/* 左浮动 */
+.fl {
+  float: left;
+}
+/* 右浮动 */
+.fr {
+  float: right;
+}
+/* 红色 */
+.style_red {
+  color: #c81623;
+}
+.shortcut ul li {
+  float: left;
+}
+.shortcut .fr ul li:nth-child(even) {
+  width: 1px;
+  height: 12px;
+  background-color: #666;
+  margin: 9px 15px 0 15px;
+}
+.arrow-icon::after {
+  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="11px" height="11px" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%23666" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 9l8 8l8-8"%2F%3E%3C%2Fsvg%3E');
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* 头部模块 */
+.header {
+  position: relative;
+  height: 105px;
+  /* background-color: pink; */
+  border:1px solid pink;
+}
+.logo {
+  position: absolute;
+  top: 25px;
+}
+.logo h1 a {
+  display: block;
+  width: 171px;
+  height: 61px;
+  background-image: url('../images/logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  /* 让文字隐藏 */
+  font-size: 0;
+}
+.search {
+  position: absolute;
+  left: 346px;
+  top: 25px;
+  width: 538px;
+  height: 36px;
+  border: 2px solid #b1191a;
+}
+/* 455*32 */
+.search input[type=search] {
+  /* 通过添加浮动可以让行内块元素之间的间隙消失 */
+  float:left;
+  width: 454px;
+  height: 32px;
+  padding-left: 10px;
+}
+.search button {
+  /* 通过添加浮动可以让行内块元素之间的间隙消失 */
+  float: left;
+  width: 80px;
+  height: 32px;
+  background-color: #b1191a;
+  font-size: 16px;
+  color: #fff;
+}
