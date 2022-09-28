@@ -151,11 +151,11 @@
   font-size: 16px;
   text-align: center;
 }
-.nav .dropdown:hover dd {
+/* .nav .dropdown:hover dd {
   display: block;
-}
+} */
 .nav .dropdown dd {
-  display: none;
+  /* display: none; */
   width: 210px;
   height: calc(465px + 2px + 2px);
   padding: 2px 0;

@@ -1,0 +1,50 @@
+.main {
+  width: 980px;
+  height: 455px;
+  margin-top: 12px;
+  margin-left: 220px;
+}
+.main .focus {
+  float: left;
+  width: 721px;
+  height: 455px;
+}
+.main .newsflash {
+  float: right;
+  width: 250px;
+  height: 455px;
+}
+.main .newsflash .news {
+  height: 165px;
+  border: 1px solid #e4e4e4;
+}
+.news_hd {
+  height: 33px;
+  line-height: 33px;
+  padding: 0 15px;
+  border-bottom: 1px dotted #e4e4e4;
+}
+.news_hd h5 {
+  float: left;
+  font-size: 14px;
+}
+.news_hd a {
+  float: right;
+}
+.news_bd {
+  padding: 5px 15px 0;
+}
+.news_bd ul li {
+  height: 24px;
+  line-height: 24px;
+}
+.main .newsflash .life_service {
+  height: 209px;
+  background-color: purple;
+}
+.main .newsflash .bargin {
+  margin-top: 5px;
+}
+.main .newsflash .bargin img {
+  width: 100%;
+}
