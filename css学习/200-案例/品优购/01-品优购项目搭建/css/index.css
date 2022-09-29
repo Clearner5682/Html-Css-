@@ -37,10 +37,33 @@
 .news_bd ul li {
   height: 24px;
   line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .main .newsflash .life_service {
   height: 209px;
-  background-color: purple;
+  border: 1px solid #e4e4e4;
+  border-top: 0;
+  overflow: hidden;
+}
+.main .newsflash .life_service ul {
+  width: 252px;
+}
+.main .newsflash .life_service ul li {
+  float: left;
+  width: 63px;
+  height: 71px;
+  border-right: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+}
+.life_service ul li i {
+  display: inline-block;
+  width: 24px;
+  height: 28px;
+  background: url('../images/icons.png') no-repeat -17px -16px;
+  margin-top: 10px;
 }
 .main .newsflash .bargin {
   margin-top: 5px;
