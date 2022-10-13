@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变形（旋转、伸缩、移动、扭曲）</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      margin-left: 100px;
+    }
+    .tools {
+      height: 200px;
+      line-height: 200px;
+    }
+    .square {
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      color: #fff;
+      background-color: pink;
+      transition: all 2s;
+    }
+    .moved {
+      transform: translate(150px,150px);
+    } 
+    .rotated {
+      transform: rotate(180deg);
+    }
+    .scaled {
+      /* 注意：transform-origin指定缩放的方向 */
+      /* 比如：这里指定缩放方向是向右和向下 */
+      transform-origin:left top;
+      transform: scale(2,2);
+    }
+    .skewed {
+      transform-origin: left top;
+      transform: skew(20deg,20deg);
+    }
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+</head>
+<body>
+  <div class="tools">
+    <input type="button" value="移动" onclick="move()">
+    <input type="button" value="取消移动" onclick="cancelMove()">
+    <input type="button" value="旋转" onclick="rotate()">
+    <input type="button" value="取消旋转" onclick="cancelRotate()">
+    <input type="button" value="伸缩" onclick="scale()">
+    <input type="button" value="取消伸缩" onclick="cancelScale()">
+    <input type="button" value="扭曲" onclick="skew()">
+    <input type="button" value="取消扭曲" onclick="cancelSkew()">
+  </div>
+  <div class="square">你好啊，李银河</div>
+
+
+  <script>
+    function move(){
+      $(".square").addClass("moved");
+    }
+    function cancelMove(){
+      $(".square").removeClass("moved");
+    }
+    function rotate(){
+      $(".square").addClass("rotated");
+    }
+    function cancelRotate(){
+      $(".square").removeClass("rotated");
+    }
+    function scale(){
+      $(".square").addClass("scaled");
+    }
+    function cancelScale(){
+      $(".square").removeClass("scaled");
+    }
+    function skew(){
+      $(".square").addClass("skewed");
+    }
+    function cancelSkew(){
+      $(".square").removeClass("skewed");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方块旋转</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .square1 {
+      margin: 200px auto;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      color: #fff;
+      background-color: pink;
+      transition: all 4s;
+    }
+    .square1:hover {
+      rotate:calc(360deg) ;
+    }
+
+    .square2 {
+      margin: 200px auto;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      color: #fff;
+      background-color: royalblue;
+      animation-name: rotation;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-play-state: paused;
+    }
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .square2:hover {
+      animation-play-state: running;
+    }
+  </style>
+</head>
+<body>
+  <div class="square1">
+    transition旋转
+  </div>
+  <div class="square2">
+    动画旋转
+  </div>
+</body>
+</html>

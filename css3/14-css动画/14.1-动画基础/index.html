@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画基础</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div.div1 {
+      margin-top: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      animation-name: first-animation;
+      animation-duration: 5s;
+      /* 动画方向，默认值为normal，即从from到to变化 */
+      /* alternate即双向的，先从from到to，再从to到from */
+      /* animation-direction:normal; */
+      /* animation-direction: alternate; */
+      /* 动画的运动函数（运动曲线） */
+      animation-timing-function: ease;
+      /* 动画重复的次数，默认为1，infinite为无限次 */
+      animation-iteration-count: infinite;
+    }
+    div.div1:hover {
+      /* 鼠标放在div1上就让动画暂停 */
+      animation-play-state: paused;
+    }
+    @keyframes first-animation {
+      /* from相当于0% */
+      from 
+      {
+        background-color: pink;
+        margin-left: 0;
+      }
+      /* to相当于100% */
+      to 
+      {
+        background-color: yellow;
+        margin-left: 500px;
+      }
+    }
+
+    div.div2 {
+      margin-top: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      animation-name: second-animation;
+      animation-duration: 5s;
+      animation-direction:normal;
+    }
+    @keyframes second-animation {
+      /* 按照动画的发生时间可以指定某个时间的具体状态，比如0%,25%,50%,75%,100% */
+      0%
+      {
+        background-color: pink;
+        margin-left: 0;
+      }
+      25%
+      {
+        background-color: yellow;
+        margin-left: 125px;
+      }
+      50%
+      {
+        background-color: blue;
+        margin-left: 250px;
+      }
+      75%
+      {
+        background-color: red;
+        margin-left: 375px;
+      }
+      100%
+      {
+        background-color: pink;
+        margin-left: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+
+  </div>
+  <div class="div2">
+
+  </div>
+</body>
+</html>
