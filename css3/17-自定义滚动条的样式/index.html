@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义滚动条的样式</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .resize {
+        width: 150px;
+        height: 150px;
+        overflow: scroll;
+        resize: horizontal;
+        border: 1px solid #ccc;
+      }
+      .resize::-webkit-scrollbar {
+        /* 对应y轴滚动条的宽度 */
+        width: 6px;
+        /* 对应x轴滚动条的高度 */
+        height: 60px;
+        background-color: transparent;
+      }
+      /* 滚动条导轨 */
+      .resize::-webkit-scrollbar-track {
+        border: 1px solid red;
+      }
+      /* 滚动条滑块 */
+      .resize::-webkit-scrollbar-thumb {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resize">
+      中国是全球最大的新能源汽车市场，中国汽车工业协会本月13日发布的数据显示，9月份，中国新能源汽车继续保持高速增长，月度产销再创历史新高，市场占有率达到27.1%。齐全的产业链条以及庞大的市场容量，让中国成为全球车企不能放过的战略重心。同样，中国市场也成为德国车企最重要的市场之一。以奔驰为例，过去7年，中国一直是其全球最大的单一市场。德国宝马MINI也曾表示，中国市场已经成为MINI全球战略重点地区。
+      <div style="width: 150px">123</div>
+    </div>
+  </body>
+</html>

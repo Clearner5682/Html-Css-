@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过拖动改变盒子宽度</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 400px;
+        display: flex;
+        border: 1px solid #ccc;
+      }
+      .left {
+        position: relative;
+        height: 400px;
+        /* background-color: pink; */
+      }
+      .left .resizable {
+        width: 400px;
+        height: 400px;
+        resize: horizontal;
+        overflow: scroll;
+        opacity: 0;
+      }
+      .left .resizable::-webkit-scrollbar {
+        /* 让X轴的滚动条高度和父元素高度一致，这样在resize-line上的任意位置都可以通过拖拽改变.resizable的宽度 */
+        /* 改变盒子大小的拖拽控件（在右下角）和X轴滚动条的高度一致 */
+        width: 400px;
+        height: inherit;
+      }
+      .left .resize-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 400px;
+        line-height: 400px;
+        border-left: 2px solid #aac5e5;
+        border-right: 2px solid #aac5e5;
+        background-color: #aac5e5;
+        cursor: ew-resize;
+        pointer-events: none;
+        text-align: center;
+      }
+      .left .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 6px;
+        bottom: 0;
+        height: 400px;
+        overflow: auto;
+      }
+      .right {
+        flex: 1;
+        height: 400px;
+        /* background-color: skyblue; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 原理就是当非overflow:auto的元素设置resize:horizontal之后，可以通过按住鼠标拖拽右下角改变盒子大小 -->
+    <!-- 但是右下角可拖拽区域太小，可以通过-webkit-scrollbar的height属性，将可拖拽区域的高度变为和父盒子一样高 -->
+    <!-- -webkit-scrollbar的宽度就是y轴滚动条的宽度，-webkit-scrollbar的高度就是x轴滚动条的高度 -->
+    <!-- resizable盒子处于标准流，可以通过拖拽改变宽度，从而撑大父盒子 -->
+    <!-- content盒子为块级元素，宽度和父盒子相同，通过将content和resize-line盒子设置为绝对定位，就可以用content和resize-line盖住resizable盒子 -->
+    <!-- pointer-events: none;表示该元素不响应鼠标事件，因此才可以拖动下面的resizable盒子的resize区域 -->
+    <div class="container">
+      <div class="left">
+        <div class="resizable">123</div>
+        <div class="resize-line"></div>
+        <p class="content">
+          中国是全球最大的新能源汽车市场，中国汽车工业协会本月13日发布的数据显示，9月份，中国新能源汽车继续保持高速增长，月度产销再创历史新高，市场占有率达到27.1%。齐全的产业链条以及庞大的市场容量，让中国成为全球车企不能放过的战略重心。同样，中国市场也成为德国车企最重要的市场之一。以奔驰为例，过去7年，中国一直是其全球最大的单一市场。德国宝马MINI也曾表示，中国市场已经成为MINI全球战略重点地区。
+        </p>
+      </div>
+      <div class="right">我是右边的内容</div>
+    </div>
+  </body>
+</html>
