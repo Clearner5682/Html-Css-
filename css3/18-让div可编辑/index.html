@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>让div可编辑</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .num {
+      width: 20px;
+      height: 500px;
+      float: left;
+      background-color: #ccc;
+      text-align: center;
+    }
+    .content {
+      width: 500px;
+      height: 500px;
+      float: left;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+    .content[editable=true] {
+      -webkit-user-modify: read-write-plaintext-only;
+    }
+    .content-line {
+      display: block;
+      font-size: 14px;
+    }
+    .num-line {
+      display: block;
+      font-size: 14px;
+    }
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+</head>
+<body>
+  <div class="num"></div>
+  <div class="content" editable="true"></div>
+  <input type="button" value="获取内容">
+
+
+  <script>
+    $(function(){
+      loadContent();
+    })
+
+    function loadContent(){
+      console.log('loadContent');
+      let text=`在CSS3他们增加了自动换行属性。使用自动换行：断字;
+
+请注意，它将在有空白处创建新行。如果你的字符串不包含空格，它将无法按预期工作，你需要以编程方式执行它`;
+      // $(".content").text(text);
+      let textLineArray=text.split('\n');
+      let numCount=textLineArray.length;
+      let index=0;
+      for(let item of textLineArray){
+        $(".num").append(`<div class='num-line' index='`+(index+1)+`'>`+(index+1)+`</div>`);
+        $(".content").append(`<div class='content-line'>`+item+`</div>`);
+        index++;
+      }
+      console.log(textLineArray);
+    }
+  </script>
+</body>
+</html>

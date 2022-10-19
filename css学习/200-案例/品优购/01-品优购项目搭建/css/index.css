@@ -103,3 +103,75 @@
   width: 248px;
   height: 163px;
 }
+
+.like {
+  margin: 10px auto;
+}
+.like .like-hd ul li {
+  height: 40px;
+  line-height: 40px;
+}
+.like-hd ul li:nth-child(1) {
+  float: left;
+  font-size: 16px;
+  color: #333;
+}
+.like-hd ul li:nth-child(2) {
+  float: right;
+  font-size: 12px;
+}
+#change::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: sub;
+  margin: 0 10px 0 5px;
+  background: url('../images/icons.png') no-repeat -420px -109px;
+}
+.like-hd ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.like .like-bd {
+  height: 232px;
+  border: 1px solid #e4e4e4;
+}
+.like-bd ul li {
+  float: left;
+  width: 199px;
+  height: 100%;
+}
+.like-bd ul:after {
+  content: '';
+  display: block;
+  clear: both;
+} 
+.like-img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.like-info .description {
+  margin: 5px 32px;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #333;
+}
+.like-info .price {
+  margin: 0 30px;
+  color: red;
+  font-size: 16px;
+  font-weight: 600;
+}
+.like-info .price::before {
+  content: '¥';
+  font-size: 12px;
+}
+.like-info {
+  border-right: 1px solid #e4e4e4;
+}
+.like-info.last{
+  border-right: none;
+}
