@@ -200,7 +200,7 @@
 .floor .w {
   margin-top: 30px;
 }
-.floor .dianqi .box-bd {
+.floor .box-bd {
   height: 361px;
   /* border: 1px solid #ccc; */
 }
@@ -264,4 +264,61 @@ a.br {
   /* 因为图片的宽度刚好和a标签的宽度相同，a.br的有边框会被盖住 */
   overflow: hidden;
   border-right: 1px solid #e4e4e4;
+}
+.floor .box-ft {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #f7f7f7;
+  height: 64px;
+}
+.box-ft ul li {
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+}
+.box-ft ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.box-ft ul li a {
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+}
+.box-ft ul li:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -21px;
+  display: inline-block;
+  height: 42px;
+  border-right: 1px dotted #ccc;
+}
+.box-ft ul li:nth-child(10)::after {
+  border: none;
+}
+
+.lift-fixed {
+  position: fixed;
+  top: 212px;
+  left: 280px;
+  width: 65px;
+}
+.lift-fixed ul li {
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  color: #666;
+  border-bottom: 1px solid #e4e4e4;
+}
+.lift-fixed ul li:hover {
+  background-color: #c81623;
+}
+.lift-fixed ul li:hover a {
+  color: #fff;
 }
