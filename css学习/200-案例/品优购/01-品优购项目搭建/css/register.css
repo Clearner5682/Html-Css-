@@ -1,0 +1,131 @@
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #c81623;
+}
+
+.register-area {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+.register-title {
+  height: 42px;
+  line-height: 42px;
+  background-color: #ececec;
+  border-bottom: 1px solid #ccc;
+}
+
+.register-title h3 {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.login {
+  float: right;
+  padding-right: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.style_red {
+  color: #c81623;
+}
+
+.register-body {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 400px;
+  /* background-color: pink; */
+}
+
+.register-body {
+  font-size: 14px;
+  color: #333;
+}
+
+.register-body ul li {
+  padding-bottom: 20px;
+}
+
+.register-body ul li.password {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.register-body ul li label {
+  display: inline-block;
+  width: 88px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.register-body ul li input {
+  width: 242px;
+  height: 37px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
+
+/* 32*12 */
+.password .password-strongth {
+  position: absolute;
+  left: 330px;
+  margin-left: -154px;
+  top: 47px;
+  height: 14px;
+  line-height: 14px;
+  font-size: 12px;
+}
+
+.password-strongth ul {
+  float: right;
+}
+
+.password-strongth ul li {
+  float: right;
+  width: 32px;
+  height: 14px;
+  line-height: 14px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  padding: 0;
+}
+
+.password-strongth ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.password-strongth span {
+  padding-right: 10px;
+  color: #ccc;
+}
+
+.password-strongth ul li:nth-child(1){
+  background-color: #de0b00;
+}
+.password-strongth ul li:nth-child(2){
+  background-color: #39b936;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.password-strongth ul li:nth-child(3){
+  background-color: #f99200;
+}
