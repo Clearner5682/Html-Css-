@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通过translate实现盒子水平居中且垂直居中</title>
+  <style>
+    div {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+    p {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      /* 这里要注意外边距会影响translate计算的距离，而p元素自身是默认就有上下的margin值的 */
+      /* 所以必须要用margin:0清除p的margin值 */
+      margin: 0;
+      background-color: royalblue;
+      top: 50%;
+      left: 50%;
+      /* 1.以前的做法是先通过定位指定top:50%和left:50%，然后再向上和向左指定自身高度和宽度一半的margin值，但是这种做法有个弊端就是必须知道自身的宽度和高度 */
+      /* margin-top: -50px; */
+      /* margin-left: -50px; */
+      /* 2.现在通过translate设置百分比，就可以在不知道盒子宽和高的情况下让盒子移动自身宽高的一半 */
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p></p>
+  </div>
+</body>
+</html>

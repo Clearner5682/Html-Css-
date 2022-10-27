@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D转换之translate</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+      div:first-child {
+        width: 200px;
+        background-color: pink;
+        /* 1.向X轴平移30px，同时向Y轴平移30px */
+        /* transform: translate(30px,30px); */
+        /* 2.向X轴平移30px */
+        /* transform: translateX(30px); */
+        /* 3.向Y轴平移30px */
+        /* transform: translateY(30px); */
+        /* 4.当平移的距离为百分比时，表示平移自身宽度和高度的百分比 */
+        transform: translate(50%, 50%);
+      }
+      div:nth-child(2) {
+        background-color: royalblue;
+      }
+
+      ul {
+        margin: 0 auto;
+      }
+      ul li {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <ul>
+      <li>translate最大的优点：不会影响到其他元素的位置</li>
+      <li>translate中的百分比单位是相对于自身元素</li>
+      <li>translate对行内元素无效</li>
+    </ul>
+  </body>
+</html>

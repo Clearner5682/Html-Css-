@@ -54,6 +54,9 @@
 }
 
 .register-body ul li {
+  /* 注意：这的li虽然盒子模型是border-box，但是由于没有给高度和宽度，li完全由其内容撑大，此时box-sizing失效，所以设置了padding能撑大盒子 */
+  /* 如果指定了height:40px，此时box-sizing不会失效，此时padding不会撑大盒子 */
+  /* height: 40px; */
   padding-bottom: 20px;
 }
 
@@ -69,7 +72,7 @@
   padding-right: 5px;
 }
 
-.register-body ul li input {
+.register-body ul li input[type=text] {
   width: 242px;
   height: 37px;
   border: 1px solid #ccc;
@@ -129,3 +132,78 @@
 .password-strongth ul li:nth-child(3){
   background-color: #f99200;
 }
+
+.register-body span.error,
+.register-body span.success {
+  margin-left: 10px;
+}
+
+i.error_icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/error.png') no-repeat;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+
+i.success_icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/success.png') no-repeat;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+
+.contract {
+  margin-left: 85px;
+}
+
+.contract input[type=checkbox]{
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.contract span {
+  padding: 0 5px;
+}
+
+.contract a {
+  color: #00a2e2;
+}
+
+input.submit {
+  width: 200px;
+  height: 34px;
+  background-color: #c81623;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  margin:30px 0 70px 100px
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -600px;
+}
+
+.mod_copyright {
+  text-align: center;
+  padding-top: 20px;
+}
+.mod_copyright .links a {
+  padding: 0 10px;
+}
+.mod_copyright .copyright {
+  margin-top: 6px;
+  line-height: 20px;
+}
+
