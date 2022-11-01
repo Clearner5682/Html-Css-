@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D转换之rotate</title>
+  <style>
+    img {
+      width: 150px;
+      border-radius: 50%;
+      border: 1px solid pink;
+      transition: all 1s;
+    }
+    img:hover {
+      /* rotate的参数为正，则顺时针旋转 */
+      /* rotate的参数为负，则逆时针旋转 */
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+  <img src="./1.png" alt="">
+</body>
+</html>

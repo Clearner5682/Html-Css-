@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D转换中心点-transform-origin</title>
+  <style>
+    .div1 {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      margin-top: 100px;
+      background-color: pink;
+      transition: all 2s;
+      /* 如果不设置2D转换中心点，则默认为center center，等价于50% 50%，即以中心点为转换中心 */
+      /* left bottom即以盒子的左下角为转换中心点 */
+      /* transform-origin: left bottom; */
+      /* 以具体坐标作为转换中心点 */
+      transform-origin: 50px 50px;
+    }
+    .div1:hover {
+      transform: rotate(360deg);
+    }
+    .div2 {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      margin-top: 100px;
+      background-color: royalblue;
+      transition: all 2s;
+      /* 转换中心对于缩放也是一样的，默认以中心点向四周放大或从四周向中心点缩小 */
+      /* top left即以左上角的点向右和向下放大或从右和从下向中心点缩小 */
+      /* transform-origin: top left; */
+      /* 100% 0相当于right top */
+      /* transform-origin: 100% 0; */
+      /* transform-origin: right top; */
+      /* 0% 100%相当于left bottom */
+      transform-origin: 0% 100%;
+    }
+    .div2:hover {
+      /* 宽度和高度都缩小为原来的一半 */
+      /* transform: scale(0.5,0.5); */
+      /* 宽度和高度都放大为原来的2倍 */
+      transform: scale(2,2);
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+</body>
+</html>
