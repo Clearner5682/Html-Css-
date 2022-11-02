@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分页控件按钮放大案例</title>
+    <style>
+      ul li {
+        float: left;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        margin: 0 15px;
+        border: 1px solid #8da78d;
+        border-radius: 50%;
+        list-style: none;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      ul li:hover {
+        transform: scale(1.2,1.2);
+      }
+      ul:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      div {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 200px;
+        height: 100px;
+        border: 1px solid #8da78d;
+        /* border-radius为高度的一半时，盒子会变成胶囊形 */
+        border-radius: 50px;
+        /* border-radius为50%时，正方形会变成圆，长方形会变成椭圆 */
+        /* border-radius: 50%; */
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+    </ul>
+    <div></div>
+  </body>
+</html>

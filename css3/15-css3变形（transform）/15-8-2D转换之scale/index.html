@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D转换之scale</title>
+  <style>
+    div {
+      width: 150px;
+      height: 150px;
+      background-color: pink;
+      margin: 0 auto;
+      margin-top: 200px;
+      /* scale也可以设置缩放中心点 */
+      transform-origin: left bottom;
+    }
+    div:hover {
+      /* 宽度和高度都不变，盒子不会有任何变化 */
+      /* transform: scale(1,1); */
+      /* 宽度和高度都变成原来的2倍 */
+      transform: scale(2,2);
+      /* scale(2,2)的简写形式 */
+      /* transform: scale(2); */
+      /* 宽度和高度都缩小为原来的一半 */
+      /* transform: scale(0.5,0.5); */
+      /* 如果直接修改盒子的宽度和高度会导致其他盒子的位置变化，但是使用scale不会，这是scale的优势 */
+      /* 直接放大宽度和高度时，盒子会向左右两边和下面放大；使用scale放大盒子时，盒子会从中心点向四周放大 */
+      /* width: 300px; */
+      /* height: 300px; */
+    }
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <p>hello world</p>
+</body>
+</html>

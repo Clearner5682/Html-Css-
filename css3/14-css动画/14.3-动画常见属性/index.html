@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画常见属性</title>
+  <style>
+    /* 1.先定义动画，使用@keyframes */
+    @keyframes move {
+      from {
+        transform: translate(0,0);
+      }
+      to {
+        transform: translate(1000px,0);
+      }
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /* 2.animation-name指定元素的动画名称，必须 */
+      animation-name: move;
+      /* 3.animation-duration指定动画持续时间，必须 */
+      animation-duration: 2s;
+      /* 4.animation-timing-function指定动画运动曲线，默认为ease */
+      animation-timing-function: ease;
+      /* 5.animation-delay指定动画延迟多久开始，默认为0 */
+      animation-delay: 0s;
+      /* 6.animation-iteration-count指定动画播放次数，默认为1，infinite为无限次 */
+      animation-iteration-count: 1;
+      /* 7.animation-direction指定动画的方向，默认为normal（即从from状态到to状态） */
+      /* alternate-reverse表示反方向（即从to状态到from状态）；alternate表示双向（即从from到to再到from，前提是动画播放次数大于1） */
+      animation-direction: alternate;
+      /* 8.animation-play-state指定动画播放状态，默认为running；paused表示暂停 */
+      animation-play-state: running;
+      /* 9.animation-fill-mode指定动画结束后状态，默认为backward（即动画结束，立即回到初始状态）；forwards表示保持结束状态 */
+      animation-fill-mode: forwards;
+    }
+    div:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

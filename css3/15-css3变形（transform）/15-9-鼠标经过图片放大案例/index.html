@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鼠标经过图片放大案例</title>
+  <style>
+    div {
+      width: 640px;
+      height: 400px;
+      float: left;
+      margin: 10px;
+      /* 给父盒子加上overflow:hidden，这样当图片放大时，超出div盒子的部分图片就看不到了；这样看上去就是图片放大，div盒子却不会动 */
+      overflow: hidden;
+    }
+    div img {
+      width: 100%;
+      transition: all 0.3s;
+    }
+    div img:hover {
+      transform: scale(1.1,1.1);
+    }
+  </style>
+</head>
+<body>
+  <div><a href="#"><img src="./cat.jpg" alt=""></a></div>
+  <div><a href="#"><img src="./cat.jpg" alt=""></a></div>
+  <div><a href="#"><img src="./cat.jpg" alt=""></a></div>
+</body>
+</html>
