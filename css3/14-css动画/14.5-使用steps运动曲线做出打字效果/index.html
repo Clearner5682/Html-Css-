@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用steps运动曲线做出打字效果</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      display: inline-block;
+      width: 0;
+      height: 20px;
+      line-height: 20px;
+      animation-name: stretch;
+      animation-duration: 9s;
+      /* 1.默认为ease，ease的运动曲线是开始慢，中间变快，快结束时再变慢 */
+      /* 2.linear即线性的、匀速的 */
+      /* 3.steps(count)，即分几步走 */
+      animation-timing-function: steps(13);
+      animation-fill-mode: forwards;
+      font-size: 20px;
+      /* 强制让文字在一行显示 */
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @keyframes stretch {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 260px;
+      }
+    }
+    .inputing {
+      display: inline-block;
+      height: 25px;
+      width: 20px;
+      margin-left: 5px;
+      vertical-align: bottom;
+      animation-name: flash;
+      animation-duration: 0.7s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    @keyframes flash {
+      0% {
+        border-bottom: none;
+      }
+      100% {
+        border-bottom: 2px solid #000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>我有一头小毛驴我从来也不骑</div><span class="inputing"></span>
+</body>
+</html>

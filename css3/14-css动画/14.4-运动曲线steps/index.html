@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>运动曲线steps</title>
+  <style>
+    div {
+      width: 0;
+      height: 30px;
+      background-color: pink;
+      animation-name: stretch;
+      animation-duration: 5s;
+      /* 1.默认为ease，ease的运动曲线是开始慢，中间变快，快结束时再变慢 */
+      /* 2.linear即线性的、匀速的 */
+      /* 3.steps(count)，即分几步走 */
+      animation-timing-function: steps(5);
+      animation-fill-mode: forwards;
+    }
+    @keyframes stretch {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
