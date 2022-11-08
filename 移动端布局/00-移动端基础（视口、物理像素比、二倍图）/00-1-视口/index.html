@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 理想视口标签的写法 -->
+  <!-- 如果去掉该视口标签，则采用默认的布局视口（按980px宽度布局） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 视口分为布局视口、视觉视口、理想视口 -->
+  <!-- 1.布局视口是指按照980px的宽度来布局，当设备的逻辑像素小于980px时则进行缩放，这是页面默认的视口（没有在meta指定viewport时） -->
+  <!-- 比如：iphone6的逻辑像素是375*667，为了在iphone6上能完整显示出980px宽度的页面，则需要对页面缩小980/375倍，所以在手机上看到该页面会很小，需要用手指去放大才能看清 -->
+  <!-- 2.视觉视口是指按照设备可视区域的宽度来布局，超出可视区域宽度的部分直接看不见。按照这种视口来布局，则iphone6只能看到375px宽度的内容，超出部分一律不显示 -->
+  <!-- 3.理想视口是指布局的宽度和设备的宽度（逻辑像素的宽度，物理像素=逻辑像素*物理像素比）一致，需要手动写meta视口标签通知浏览器操作 -->
+  你好啊，李银河
+</body>
+</html>
