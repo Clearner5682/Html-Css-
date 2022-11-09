@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>二倍图</title>
+  <style>
+    img {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 为什么要用二倍图？ -->
+  <!-- 以iphone6为例，直接显示50*50的图片时。由于iphone6的像素比为2，所以会用100*100个像素去显示，所以相当于把50*50的图片强行放大2倍，看上去会模糊 -->
+  <!-- 二倍图的做法：图片采用100*100的大小，将img标签尺寸缩小一半。此时在iphone6上显示时，还是会用100*100个像素去显示，图片没被放大，看上去还是很清晰 -->
+  <img src="./images/apple50.png" alt="">
+  <img src="./images/apple100.png" alt="">
+</body>
+</html>
