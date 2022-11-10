@@ -6,6 +6,7 @@ body{
     font-size: 14px;
     color: #666;
     font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 ul{
@@ -55,6 +56,9 @@ ul{
 .search-wrap{
     height: 44px;
     position: relative;
+    /* 由于搜索框是块级元素，直接给margin-top会导致外边距塌陷，可以通过给父元素加边框或设置overflow:hidden来解决 */
+    /* border: 1px solid transparent; */
+    overflow: hidden;
 }
 
 .search-btn{
@@ -80,4 +84,5 @@ ul{
     background-color: skyblue;
     margin: 0 50px;
     margin-top: 7px;
+    border-radius: 15px;
 }
