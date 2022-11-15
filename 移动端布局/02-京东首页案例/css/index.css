@@ -57,7 +57,8 @@ ul{
     height: 44px;
     position: relative;
     /* 由于搜索框是块级元素，直接给margin-top会导致外边距塌陷，可以通过给父元素加边框或设置overflow:hidden来解决 */
-    /* border: 1px solid transparent; */
+    /* border: 1px solid red; */
+    background-color: #c82519;
     overflow: hidden;
 }
 
@@ -65,24 +66,84 @@ ul{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: pink;
     width: 40px;
     height: 44px;
+}
+
+.search-btn::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 16px;
+    margin: 14px 10px;
+    background: url('../images/s_btn.png') no-repeat;
+    background-size: 100% 100%;
 }
 
 .search-login{
     position: absolute;
     top: 0;
     right: 0;
-    background-color: purple;
     width: 40px;
     height: 44px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
 }
 
 .search{
+    position: relative;
+    box-sizing: border-box;
     height: 30px;
-    background-color: skyblue;
-    margin: 0 50px;
+    line-height: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 15px;
     margin-top: 7px;
     border-radius: 15px;
+    background-color: #fff;
+}
+
+.jd-icon {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    top: 7px;
+    left: 13px;
+    background: url('../images/jd.png') no-repeat;
+    background-size: 20px;
+}
+
+.jd-icon::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 17px;
+    border-right: 1px solid #ccc;
+    left: 28px;
+    top: -1px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 50px;
+    top: 7px;
+    width: 18px;
+    height: 15px;
+    /* 这里精灵图也用的二倍图，所以background-position要在背景图缩放为原来的一半时进行测量 */
+    background: url('../images/jd-sprites.png') no-repeat -81px 0px;
+    /* 这里background-size也要缩小为原来的一半 */
+    /* 注意：背景图片并不会撑大盒子 */
+    background-size: 200px;
+}
+
+.search-input {
+    box-sizing: border-box;
+    height: 15px;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 20px;
+    border: none;
+    outline: none;
 }
