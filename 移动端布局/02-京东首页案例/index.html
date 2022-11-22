@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,
-    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"
+    />
     <title>Document</title>
     <!-- 引入normalize.css -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css" />
     <!-- 引入index.css -->
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
     <!-- 顶部 -->
     <header class="app">
-        <ul>
-            <li>
-                <img src="./images/close.png" alt="">
-            </li>
-            <li>
-                <img src="./images/logo.png" alt="">
-            </li>
-            <li>打开京东App，购物更轻松</li>
-            <li>立即打开</li>
-        </ul>
+      <ul>
+        <li>
+          <img src="./images/close.png" alt="" />
+        </li>
+        <li>
+          <img src="./images/logo.png" alt="" />
+        </li>
+        <li>打开京东App，购物更轻松</li>
+        <li>立即打开</li>
+      </ul>
     </header>
     <!-- 搜索 -->
     <div class="search-wrap">
-        <div class="search-btn"></div>
-        <div class="search">
-            <div class="jd-icon"></div>
-            <!-- 二倍精灵图的做法： -->
-            <!-- 1.将精灵图等比缩放一半之后进行测量 -->
-            <!-- 2.精灵图的background-size也要缩放为原来的一半（但是图片还是采用二倍图） -->
-            <div class="search-icon"></div>
-            <input type="text" class="search-input" placeholder="乳胶漆"></input>
-        </div>
-        <div class="search-login">登录</div>
+      <div class="search-btn"></div>
+      <div class="search">
+        <div class="jd-icon"></div>
+        <!-- 二倍精灵图的做法： -->
+        <!-- 1.将精灵图等比缩放一半之后进行测量 -->
+        <!-- 2.精灵图的background-size也要缩放为原来的一半（但是图片还是采用二倍图） -->
+        <div class="search-icon"></div>
+        <input type="text" class="search-input" placeholder="乳胶漆" />
+      </div>
+      <div class="search-login">登录</div>
     </div>
-</body>
+    <!-- 主题内容 -->
+    <div class="main-content">
+      <div class="top-bg"></div>
+      <div class="slider">
+        <img src="./uploads/slider4.jpg" alt="" />
+      </div>
+    </div>
+  </body>
 </html>

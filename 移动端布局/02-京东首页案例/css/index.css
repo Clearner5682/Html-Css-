@@ -55,9 +55,13 @@ ul{
 
 .search-wrap{
     height: 44px;
-    position: relative;
+    position: fixed;
+    top: 45px;
+    /* 固定定位的盒子需要给宽度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
     /* 由于搜索框是块级元素，直接给margin-top会导致外边距塌陷，可以通过给父元素加边框或设置overflow:hidden来解决 */
-    /* border: 1px solid red; */
     background-color: #c82519;
     overflow: hidden;
 }
@@ -146,4 +150,34 @@ ul{
     padding-right: 20px;
     border: none;
     outline: none;
+}
+
+.main-content{
+    background-color: #f6f6f6;
+}
+
+.main-content .top-bg {
+    position: absolute;
+    /* 绝对定位脱离了标准流，要设置宽度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    background-color: #c82519;
+    height: 100px;
+}
+
+.slider {
+    position: relative;
+    z-index: 100;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 44px;
+}
+
+.slider img {
+    width: 100%;
+    /* 图片默认的vertical-align为baseline，会导致有缝隙，通过修改vertical-align可以解决 */
+    vertical-align: middle;
 }
