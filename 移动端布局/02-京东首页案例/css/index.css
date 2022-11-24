@@ -174,10 +174,40 @@ ul{
     border-radius: 10px;
     overflow: hidden;
     margin-top: 44px;
+    font-size: 0;
 }
 
 .slider img {
     width: 100%;
     /* 图片默认的vertical-align为baseline，会导致有缝隙，通过修改vertical-align可以解决 */
-    vertical-align: middle;
+    /* 或者给父元素设置font-size:0也可以解决 */
+    /* vertical-align: bottom; */
 }
+
+.slider-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider-nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.slider-nav li {
+    list-style: none;
+    float: left;
+    width: 6px;
+    height: 6px;
+    background-color: hsla(0, 0%, 100%, .5);
+    border-radius: 3px;
+    margin: 0 6px;
+}
+
+.slider-nav li.active {
+    background-color: #fa2c19;
+}
+
