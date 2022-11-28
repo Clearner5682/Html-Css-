@@ -211,3 +211,139 @@ ul{
     background-color: #fa2c19;
 }
 
+.nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.nav a img {
+    display: block;
+    /* 先固定大小为40*40，后续再用rem来优化 */
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.nav span {
+    display: block;
+    margin-top: 6px;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+
+.second-kill {
+    border: 1px solid red;;
+    margin: 10px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.second-kill .kill-header {
+    height: 35px;
+    line-height: 35px;
+    background: url('../images/kill-header.png') no-repeat;
+    background-size: 100%;
+}
+
+.kill-header .left {
+    float: left;
+    width: 50%
+}
+
+.kill-header .right {
+    float: right;
+    width: 50%;
+}
+
+.kill-header .title {
+    margin: 0 5px 0 10px;
+    color: #333333;
+}
+
+.kill-header .time {
+    color: #ff2727;
+    padding: 2px;
+}
+
+.kill-header .time::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    background: url('../images/seckill-time.png') no-repeat;
+    background-size: 100%;
+    transform: translateY(3px);
+}
+
+.kill-header .clock {
+    float: right;
+    height: 100%;
+}
+
+.kill-header .clock::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.kill-header .clock div {
+    position: relative;
+    float: left;
+    width: 15px;
+    height: 18px;
+    line-height: 18px;
+    margin: 8px 0 0 0;
+    background-color: #fa2c19;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.kill-header .clock div:nth-child(2){
+    margin: 8px 5px 0 5px;
+}
+
+.kill-header .clock .hour::after,
+.kill-header .clock .minute::after
+{
+    content: ':';
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    color: #fa2c19;
+    font-weight: 600;
+}
+
+.kill-header .right {
+    height: 35px;
+}
+
+.kill-header .right div {
+    height: 100%;
+    float: right;
+    color:#f23030;
+    font-size: 12px;
+}
+
+.kill-header .right div i {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 10px 0 3px;
+    transform: translateY(1px);
+    background: url('../images/arrow_rt.png') no-repeat;
+    background-size: 100%;
+}
