@@ -242,11 +242,10 @@ ul{
 }
 
 .second-kill {
-    border: 1px solid red;;
     margin: 10px;
-    height: 100px;
     border-radius: 10px;
     overflow: hidden;
+    background-color: #fff;
 }
 
 .second-kill .kill-header {
@@ -258,12 +257,10 @@ ul{
 
 .kill-header .left {
     float: left;
-    width: 50%
 }
 
 .kill-header .right {
     float: right;
-    width: 50%;
 }
 
 .kill-header .title {
@@ -287,8 +284,9 @@ ul{
 }
 
 .kill-header .clock {
-    float: right;
+    display: inline-block;
     height: 100%;
+    padding: 0 4px;
 }
 
 .kill-header .clock::after {
@@ -299,20 +297,20 @@ ul{
 
 .kill-header .clock div {
     position: relative;
-    float: left;
+    display: inline-block;
     width: 15px;
     height: 18px;
     line-height: 18px;
-    margin: 8px 0 0 0;
     background-color: #fa2c19;
     text-align: center;
     color: #fff;
     font-size: 12px;
     border-radius: 5px;
+    transform: translateY(-1px);
 }
 
 .kill-header .clock div:nth-child(2){
-    margin: 8px 5px 0 5px;
+    margin: 0 5px 0 5px;
 }
 
 .kill-header .clock .hour::after,
@@ -322,7 +320,7 @@ ul{
     display: inline;
     position: absolute;
     top: 0;
-    right: -5px;
+    right: -6px;
     color: #fa2c19;
     font-weight: 600;
 }
@@ -347,3 +345,40 @@ ul{
     background: url('../images/arrow_rt.png') no-repeat;
     background-size: 100%;
 }
+
+.kill-body {
+    margin: 10px 10px 0 10px;
+}
+
+.kill-body ul li {
+    float: left;
+    width: calc(100%/6);
+    box-sizing: border-box;
+    padding: 0 1px;
+}
+
+.kill-body ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.kill-body a,
+.kill-body img,
+.kill-body span {
+    display: block;
+    width: 100%;
+}
+
+.kill-body a {
+    text-decoration: none;
+    padding: 0 1px;
+}
+
+.kill-body span {
+    margin-top: 10px;
+    text-align: center;
+    color:#f2270c;
+    font-size: 13px;
+}
+
