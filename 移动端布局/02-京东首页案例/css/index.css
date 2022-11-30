@@ -382,3 +382,98 @@ ul{
     font-size: 13px;
 }
 
+.recommand * {
+    box-sizing: border-box;
+}
+
+.waterfall {
+    padding: 5px;
+}
+
+.waterfall::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.waterfall-left,
+.waterfall-right {
+    width: 50%;
+    float: left;
+}
+
+.goods-wrapper {
+    width: 100%;
+    padding: 5px;
+}
+
+a.goods {
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.goods-image {
+    background-color: #fff;
+}
+
+.goods-image img {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.goods-info {
+    padding: 0 10px 10px 10px;
+    background-color: #fff;
+}
+
+.goods-name {
+    height: 42px;
+    line-height: 21px;
+    text-align: left;
+    /* 多行文字溢出显示...的方法 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    word-wrap: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: #434343;
+    font-size: 14px;
+}
+
+span.goods-price {
+    color:#ff4142;
+    font-size:20px
+}
+
+span.goods-price::before {
+    content: '¥';
+    font-size: 14px;
+}
+
+.goods-row-bottom {
+    height: 20px;
+    line-height: 20px;
+}
+
+.goods-tag.jd-express img {
+    width: 44px;
+    vertical-align: middle;
+}
+
+/* 50*20 */
+.similar {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #f2f2f2;
+    color: #262626;
+    text-align: center;
+    border-radius: 10px;
+}
