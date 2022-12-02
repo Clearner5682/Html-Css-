@@ -64,6 +64,8 @@ ul{
     /* 由于搜索框是块级元素，直接给margin-top会导致外边距塌陷，可以通过给父元素加边框或设置overflow:hidden来解决 */
     background-color: #c82519;
     overflow: hidden;
+    /* 搜索框的z-index要比slider大才能盖住slider */
+    z-index: 101;
 }
 
 .search-btn{
@@ -154,6 +156,8 @@ ul{
 
 .main-content{
     background-color: #f6f6f6;
+    /* 给父元素设置overflow:hidden可以防止外边距塌陷的问题 */
+    overflow: hidden;
 }
 
 .main-content .top-bg {
@@ -163,7 +167,7 @@ ul{
     min-width: 320px;
     max-width: 640px;
     background-color: #c82519;
-    height: 100px;
+    height: 144px;
 }
 
 .slider {
