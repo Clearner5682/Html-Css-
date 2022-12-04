@@ -1,0 +1,27 @@
+@borderColor:deeppink;
+@fontBase:14px;
+
+html {
+  font-size: @fontBase;
+}
+
+#container {
+  border: 1px solid @borderColor;
+  // 注意：这里进行运算时
+  // 1.如果只有一个单位，则计算出来的结果就是这个单位
+  // 2.如果有多个不同的单位，则计算出来的结果以最前面的单位为准
+  // 3.运算符前后都必须有一个空格，和calc()类似
+  // 4.除法计算必须用括号包含起来
+  height: (80rem / @fontBase);
+  a {
+    color: red;
+  }
+  // 注意：伪类选择器的写法，前面必须加上&
+  &::after {
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: @borderColor;
+  }
+}

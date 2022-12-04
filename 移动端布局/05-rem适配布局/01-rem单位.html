@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rem单位</title>
+  <style>
+    html {
+      font-size: 14px;
+    }
+    .parent {
+      font-size: 12px;
+    }
+    .child {
+      /* 1.em是相对于父元素的字体大小来说的，比如：父元素字体大小为12px，.child宽度为10em，则表示120px */
+      /* width: 10em;
+      height: 10em; */
+      /* 2.rem是相对于html的字体来说的，比如：html的字体是14px，.child宽度为10rem，则表示140px */
+      width: 10rem;
+      height: 10rem;
+      background-color: pink;
+      /* 3.rem的优点是通过修改html的字体大小可以全局的改变页面元素的大小 */
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <p class="child">
+      我有一头小毛驴，我从来也不骑
+    </p>
+  </div>
+</body>
+</html>

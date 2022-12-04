@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>媒体查询语法简介</title>
+  <style>
+    /* @media表示这是一个媒体查询 */
+    /* mediatype表示媒体类型分all,screen,print  */
+    /* and|not|only用于连接媒体类型和媒体特性,and表示且,not表示非,only表示指定特定的媒体类型，可以省略 */
+    /* media feature表示媒体特性，比如：width,max-width,min-width等 */
+    /* @media mediatype and|not|only (media feature) {
+      css-code;
+    }*/
+    /* 比如下面这个媒体查询的意思就是：在屏幕的宽度大于0像素时，设置body的背景色为royalblue */
+    @media screen and (min-width: 0px){
+      body {
+        background-color: royalblue;
+      }
+    }
+    /* 当屏幕的宽度大于500像素时，设置body的背景色为pink */
+    @media screen and (min-width: 500px) {
+      body {
+        background-color: pink;
+      }
+    }
+    /* 当屏幕的宽度大于1000像素时，设置body的背景色为red */
+    @media screen and (min-width: 1000px){
+      body {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>

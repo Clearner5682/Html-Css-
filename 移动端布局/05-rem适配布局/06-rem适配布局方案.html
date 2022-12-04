@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rem适配布局方案</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      /* 1.先根据设计稿的宽度除以15（一般的设计稿宽度都是750），计算出html的font-size，750px/15 */
+      font-size: 50px;
+    }
+    /* 2.测量设计稿中元素的尺寸，比如：假设设计稿中div的尺寸为100*100 */
+    div {
+      /* width: 100px;
+      height: 100px; */
+      /* 3.根据设计稿的尺寸除以html的font-size计算出rem尺寸 */
+      width: 2rem;
+      height: 2rem;
+      background-color: pink;
+    }
+    /* 4.根据不同的屏幕尺寸，设置不同尺寸下html的font-size */
+    /* 这里只适配2种尺寸，会导致如下问题： */
+    /* 屏幕宽度在320-750之间的设备显示的div尺寸都是同一个，比如640和320的显示的div大小一样，这显然不是很好 */
+    /* 如果想要适配效果更好则必须要添加多个尺寸的适配 */
+    @media screen and (min-width:320px) {
+      html {
+        /* 320px/15=21.33px */
+        font-size:21.33px
+      }
+    }
+    @media screen and (min-width:750px) {
+      html {
+        /* 750px/15=50px */
+        font-size: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 元素rem尺寸的取值方法 -->
+  <!-- 1、最后的公式：页面元素rem值=页面元素宽度像素/(设备屏幕宽度像素/划分的份数)，rem就代表的1分的像素。这里的份数可以随意指定，份数变了则html的font-size就变了，也是就是rem变了 -->
+  <!-- 2、屏幕宽度/划分的份数就是html的font-size大小 -->
+  <!-- 3、页面元素的rem值=页面元素宽度像素/html的font-size大小 -->
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+html {
+  font-size: 14px;
+}
+#container {
+  border: 1px solid deeppink;
+  height: 5.71428571rem;
+}
+#container a {
+  color: red;
+}
+#container::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: deeppink;
+}
