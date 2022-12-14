@@ -1,5 +1,5 @@
 @import url(./common.less); // 通过@import可以将其他less文件的内容引用进来
-@baseFont:50;
+@baseFont: 50;
 * {
   box-sizing: border-box;
 }
@@ -9,19 +9,19 @@ body {
   margin: 0 auto; // 水平居中
   line-height: 1.5; // 注意:这里行高1.5和150%是有区别的,1.5的行高被子元素继承之后子元素会按子元素的font-size*1.5来计算出真实的行高;如果是150%的行高,会直接按父元素的font-size*1.5之后直接应用到子元素
   font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
+  background: #f7f7f7;
 }
 
 .header {
   position: relative;
-  background-color:#ffdb47;
+  background-color: #ffdb47;
   .top-wrap {
     height: (88rem / @baseFont);
     line-height: (88rem / @baseFont);
     margin: 0 (34rem / @baseFont);
     display: flex;
     justify-content: space-between;
-    align-items: center;// 设置子元素在侧轴的排列方式
+    align-items: center; // 设置子元素在侧轴的排列方式
     .top-left {
       width: (36rem / @baseFont);
       height: (60rem / @baseFont);
@@ -57,7 +57,7 @@ body {
       display: inline-block;
       width: (36rem / @baseFont);
       height: (36rem / @baseFont);
-      background: url('../images/search-icon.png') no-repeat;
+      background: url("../images/search-icon.png") no-repeat;
       background-size: (36rem / @baseFont) (36rem / @baseFont);
     }
     .search-input {
@@ -66,10 +66,154 @@ body {
       line-height: (64rem / @baseFont);
       padding: 0 (20rem / @baseFont) 0 (65rem / @baseFont);
       outline: none;
-      border:none;
+      border: none;
       border-radius: (61rem / @baseFont);
       font-size: (28rem / @baseFont);
       color: #999;
+    }
+  }
+}
+
+.main-content {
+  .nav {
+    a {
+      display: block;
+      float: left;
+      width: (150rem / @baseFont);
+      height: (142rem / @baseFont);
+      text-decoration: none;
+      .img-container {
+        width: (84rem / @baseFont);
+        height: (84rem / @baseFont);
+        margin: 0 auto;
+        margin-top: (24rem / @baseFont);
+        img {
+          width: (84rem / @baseFont);
+          height: (84rem / @baseFont);
+        }
+      }
+      .title {
+        width: (150rem / @baseFont);
+        height: (28rem / @baseFont);
+        line-height: (28rem / @baseFont);
+        margin-top: (5rem / @baseFont);
+        text-align: center;
+        font-size: (22rem / @baseFont);
+        color: #666;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  .recommand {
+    width: (702rem / @baseFont);
+    margin: 0 auto;
+    margin-top: (18rem / @baseFont);
+    .recommand-left {
+      float: left;
+      .card-channel {
+        margin-bottom: (18rem / @baseFont);
+        padding-left: (12rem / @baseFont);
+        padding-top: (46rem / @baseFont);
+      }
+    }
+    .recommand-right {
+      float: right;
+      .card-channel {
+        &::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+      }
+    }
+    .card-channel {
+      position: relative;
+      width: (342rem / @baseFont);
+      height: (210rem / @baseFont);
+      overflow: hidden;
+
+      a.bg {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      a.left-bg,a.right-bg {
+        float: left;
+        width: 50%;
+        height: 100%;
+      }
+
+      a.left-bg {
+        background: url('../images/scene.png') no-repeat;
+        background-size: 100%;
+        img {
+          position: absolute;
+          top: (56rem / @baseFont);
+          left: (17.5rem / @baseFont);
+          width: (136rem / @baseFont);
+          height: (136rem / @baseFont);
+        }
+      }
+
+      a.right-bg {
+        background: url('../images/suning-live.png') no-repeat;
+        background-size: 100%;
+        img {
+          position: absolute;
+          top: (56rem / @baseFont);
+          right: (17.5rem / @baseFont);
+          width: (136rem / @baseFont);
+          height: (136rem / @baseFont);
+        }
+      }
+
+      a.goods {
+        display: block;
+        position: relative;
+        width: (154rem / @baseFont);
+        height: (154rem / @baseFont);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        span.price {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          display: block;
+          height: (28rem / @baseFont);
+          line-height: (28rem / @baseFont);
+          padding: 0 (14rem / @baseFont);
+          border-radius: (28rem / @baseFont);
+          background-color: #ffebeb;
+          color: red;
+          font-size: (22rem / @baseFont);
+        }
+      }
+
+      a.goods:nth-child(2) {
+        float: left;
+      }
+
+      a.goods:nth-child(3) {
+        float: right;
+      }
     }
   }
 }

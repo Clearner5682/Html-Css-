@@ -65,7 +65,7 @@ body {
   margin: 0 auto;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
+  background: #f7f7f7;
 }
 .header {
   position: relative;
@@ -114,7 +114,7 @@ body {
   display: inline-block;
   width: 0.72rem;
   height: 0.72rem;
-  background: url('../images/search-icon.png') no-repeat;
+  background: url("../images/search-icon.png") no-repeat;
   background-size: 0.72rem 0.72rem;
 }
 .header .search-wrap .search-input {
@@ -127,4 +127,132 @@ body {
   border-radius: 1.22rem;
   font-size: 0.56rem;
   color: #999;
+}
+.main-content .nav a {
+  display: block;
+  float: left;
+  width: 3rem;
+  height: 2.84rem;
+  text-decoration: none;
+}
+.main-content .nav a .img-container {
+  width: 1.68rem;
+  height: 1.68rem;
+  margin: 0 auto;
+  margin-top: 0.48rem;
+}
+.main-content .nav a .img-container img {
+  width: 1.68rem;
+  height: 1.68rem;
+}
+.main-content .nav a .title {
+  width: 3rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  margin-top: 0.1rem;
+  text-align: center;
+  font-size: 0.44rem;
+  color: #666;
+}
+.main-content .nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.main-content .recommand {
+  width: 14.04rem;
+  margin: 0 auto;
+  margin-top: 0.36rem;
+}
+.main-content .recommand .recommand-left {
+  float: left;
+}
+.main-content .recommand .recommand-left .card-channel {
+  margin-bottom: 0.36rem;
+  padding-left: 0.24rem;
+  padding-top: 0.92rem;
+}
+.main-content .recommand .recommand-right {
+  float: right;
+}
+.main-content .recommand .recommand-right .card-channel::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.main-content .recommand .card-channel {
+  position: relative;
+  width: 6.84rem;
+  height: 4.2rem;
+  overflow: hidden;
+}
+.main-content .recommand .card-channel a.bg {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.main-content .recommand .card-channel a.bg img {
+  width: 100%;
+  height: 100%;
+}
+.main-content .recommand .card-channel a.left-bg,
+.main-content .recommand .card-channel a.right-bg {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+.main-content .recommand .card-channel a.left-bg {
+  background: url('../images/scene.png') no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel a.left-bg img {
+  position: absolute;
+  top: 1.12rem;
+  left: 0.35rem;
+  width: 2.72rem;
+  height: 2.72rem;
+}
+.main-content .recommand .card-channel a.right-bg {
+  background: url('../images/suning-live.png') no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel a.right-bg img {
+  position: absolute;
+  top: 1.12rem;
+  right: 0.35rem;
+  width: 2.72rem;
+  height: 2.72rem;
+}
+.main-content .recommand .card-channel a.goods {
+  display: block;
+  position: relative;
+  width: 3.08rem;
+  height: 3.08rem;
+}
+.main-content .recommand .card-channel a.goods img {
+  width: 100%;
+  height: 100%;
+}
+.main-content .recommand .card-channel a.goods span.price {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: block;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  padding: 0 0.28rem;
+  border-radius: 0.56rem;
+  background-color: #ffebeb;
+  color: red;
+  font-size: 0.44rem;
+}
+.main-content .recommand .card-channel a.goods:nth-child(2) {
+  float: left;
+}
+.main-content .recommand .card-channel a.goods:nth-child(3) {
+  float: right;
 }
