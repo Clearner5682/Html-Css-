@@ -167,8 +167,7 @@ body {
 .main-content .recommand .recommand-left {
   float: left;
 }
-.main-content .recommand .recommand-left .card-channel {
-  margin-bottom: 0.36rem;
+.main-content .recommand .recommand-left .card-channel:nth-child(1) {
   padding-left: 0.24rem;
   padding-top: 0.92rem;
 }
@@ -176,7 +175,7 @@ body {
   float: right;
 }
 .main-content .recommand .recommand-right .card-channel::after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -185,6 +184,7 @@ body {
   width: 6.84rem;
   height: 4.2rem;
   overflow: hidden;
+  margin-bottom: 0.36rem;
 }
 .main-content .recommand .card-channel a.bg {
   position: absolute;
@@ -200,31 +200,65 @@ body {
 }
 .main-content .recommand .card-channel a.left-bg,
 .main-content .recommand .card-channel a.right-bg {
+  position: relative;
   float: left;
   width: 50%;
   height: 100%;
 }
-.main-content .recommand .card-channel a.left-bg {
-  background: url('../images/scene.png') no-repeat;
-  background-size: 100%;
-}
-.main-content .recommand .card-channel a.left-bg img {
+.main-content .recommand .card-channel a.left-bg img,
+.main-content .recommand .card-channel a.right-bg img {
   position: absolute;
   top: 1.12rem;
   left: 0.35rem;
   width: 2.72rem;
   height: 2.72rem;
 }
-.main-content .recommand .card-channel a.right-bg {
-  background: url('../images/suning-live.png') no-repeat;
+.main-content .recommand .card-channel a.left-bg span.maidian,
+.main-content .recommand .card-channel a.right-bg span.maidian {
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  transform: translateX(-50%);
+  display: block;
+  white-space: nowrap;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  padding: 0 0.28rem;
+  background-color: #fff6ed;
+  color: #b95a17;
+  font-size: 0.44rem;
+  text-align: center;
+  border-radius: 0.56rem;
+}
+.main-content .recommand .card-channel #scene {
+  background: url("../images/scene.png") no-repeat;
   background-size: 100%;
 }
-.main-content .recommand .card-channel a.right-bg img {
-  position: absolute;
-  top: 1.12rem;
-  right: 0.35rem;
-  width: 2.72rem;
-  height: 2.72rem;
+.main-content .recommand .card-channel #suning-live {
+  background: url("../images/suning-live.png") no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel #rank {
+  background: url("../images/rank.png") no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel #super-user {
+  background: url("../images/super-user.png") no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel #super-user .maidian {
+  background-color: #ffebeb;
+}
+.main-content .recommand .card-channel #electronics {
+  background: url("../images/electronics.png") no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel #new-products {
+  background: url("../images/new-products.png") no-repeat;
+  background-size: 100%;
+}
+.main-content .recommand .card-channel #new-products .maidian {
+  background-color: #ffebeb;
 }
 .main-content .recommand .card-channel a.goods {
   display: block;
@@ -255,4 +289,40 @@ body {
 }
 .main-content .recommand .card-channel a.goods:nth-child(3) {
   float: right;
+}
+.main-content .recommand .slider {
+  position: relative;
+  width: 6.84rem;
+  height: 8.76rem;
+  overflow: hidden;
+  margin-bottom: 0.36rem;
+  border-radius: 0.3rem;
+}
+.main-content .recommand .slider img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.main-content .recommand .slider div {
+  position: absolute;
+  left: 0;
+  bottom: 0.24rem;
+  width: 100%;
+  height: 0.16rem;
+  line-height: 0.16rem;
+  display: flex;
+  justify-content: center;
+}
+.main-content .recommand .slider div span {
+  width: 0.16rem;
+  height: 0.16rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.16rem;
+  margin: 0 0.08rem;
+}
+.main-content .recommand .slider div span.active {
+  width: 0.36rem;
+  background-color: #fff;
 }

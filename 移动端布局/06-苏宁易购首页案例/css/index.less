@@ -114,8 +114,7 @@ body {
     margin-top: (18rem / @baseFont);
     .recommand-left {
       float: left;
-      .card-channel {
-        margin-bottom: (18rem / @baseFont);
+      .card-channel:nth-child(1) {
         padding-left: (12rem / @baseFont);
         padding-top: (46rem / @baseFont);
       }
@@ -124,7 +123,7 @@ body {
       float: right;
       .card-channel {
         &::after {
-          content: '';
+          content: "";
           display: block;
           clear: both;
         }
@@ -135,6 +134,7 @@ body {
       width: (342rem / @baseFont);
       height: (210rem / @baseFont);
       overflow: hidden;
+      margin-bottom: (18rem / @baseFont);
 
       a.bg {
         position: absolute;
@@ -150,15 +150,12 @@ body {
         }
       }
 
-      a.left-bg,a.right-bg {
+      a.left-bg,
+      a.right-bg {
+        position: relative;
         float: left;
         width: 50%;
         height: 100%;
-      }
-
-      a.left-bg {
-        background: url('../images/scene.png') no-repeat;
-        background-size: 100%;
         img {
           position: absolute;
           top: (56rem / @baseFont);
@@ -166,17 +163,57 @@ body {
           width: (136rem / @baseFont);
           height: (136rem / @baseFont);
         }
+        span.maidian {
+          position: absolute;
+          left: 50%;
+          bottom: (10rem / @baseFont);
+          transform: translateX(-50%);
+          display: block;
+          white-space: nowrap; // 让文字强制在一行显示，不换行
+          height: (28rem / @baseFont);
+          line-height: (28rem / @baseFont);
+          padding: 0 (14rem / @baseFont);
+          background-color: #fff6ed;
+          color: #b95a17;
+          font-size: (22rem / @baseFont);
+          text-align: center;
+          border-radius: (28rem / @baseFont);
+        }
       }
 
-      a.right-bg {
-        background: url('../images/suning-live.png') no-repeat;
+      #scene {
+        background: url("../images/scene.png") no-repeat;
         background-size: 100%;
-        img {
-          position: absolute;
-          top: (56rem / @baseFont);
-          right: (17.5rem / @baseFont);
-          width: (136rem / @baseFont);
-          height: (136rem / @baseFont);
+      }
+
+      #suning-live {
+        background: url("../images/suning-live.png") no-repeat;
+        background-size: 100%;
+      }
+
+      #rank {
+        background: url("../images/rank.png") no-repeat;
+        background-size: 100%;
+      }
+
+      #super-user {
+        background: url("../images/super-user.png") no-repeat;
+        background-size: 100%;
+        .maidian {
+          background-color: #ffebeb;
+        }
+      }
+
+      #electronics {
+        background: url("../images/electronics.png") no-repeat;
+        background-size: 100%;
+      }
+
+      #new-products {
+        background: url("../images/new-products.png") no-repeat;
+        background-size: 100%;
+        .maidian {
+          background-color: #ffebeb;
         }
       }
 
@@ -213,6 +250,42 @@ body {
 
       a.goods:nth-child(3) {
         float: right;
+      }
+    }
+    .slider {
+      position: relative;
+      width: (342rem / @baseFont);
+      height: (438rem / @baseFont);
+      overflow: hidden;
+      margin-bottom: (18rem / @baseFont);
+      border-radius: (15rem / @baseFont);
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+      }
+      div {
+        position: absolute;
+        left: 0;
+        bottom: (12rem / @baseFont);
+        width: 100%;
+        height: (8rem / @baseFont);
+        line-height: (8rem / @baseFont);
+        display: flex;
+        justify-content: center;
+        span {
+          width: (8rem / @baseFont);
+          height: (8rem / @baseFont);
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: (8rem / @baseFont);
+          margin: 0 (4rem / @baseFont);
+        }
+        span.active {
+          width: (18rem / @baseFont);
+          background-color: #fff;
+        }
       }
     }
   }
