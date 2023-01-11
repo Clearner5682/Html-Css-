@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暗黑主题</title>
+  <style>
+    html {
+      filter: invert(1) hue-rotate(360deg);
+    }
+    body {
+      /* 一定要设置背景色filter才会生效 */
+      background-color: #fff;
+    }
+    p {
+      border: 1px solid #666;
+      border-radius: 6px;
+    }
+    th {
+      width: 200px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+    td {
+      text-align: center;
+      border: 1px solid #333;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    div.bg {
+      margin-top: 30px;
+      width: 300px;
+      height: 300px;
+      background: url('./goods2.png') no-repeat;
+      background-size: 100%;
+      /* 让图片还原原本的颜色 */
+      filter: invert(1) hue-rotate(360deg);
+    }
+    img {
+      filter: invert(1) hue-rotate(360deg);
+    }
+  </style>
+</head>
+<body mode="dark">
+  <p>
+    那么现在让我们瞅瞅背后发生了啥
+在 CSS 中 filter 属性用于元素的图形效果，比如模糊或者色彩偏移，通常用于调整图像、背景或者边框的渲染（参考：MDN 文档）。
+为了实现暗黑模式，我们会用到名为 invert 和 hue-rotate 的两个滤镜
+invert 可以帮我们反转应用的颜色。这样，我们的黑色会变成白色，白色变成黑色，并且其它所有颜色都类似。invert() 函数作为 filter 属性的值，接收 0 到 1 之间的数字，或者 0% 到 100% 之间的百分比。
+hue-rotate 可以帮我们处理黑色及白色以外的颜色。通过将色相旋转 180 度，确保我们应用的整体主题不会被改变，只是减弱颜色就好。
+  </p>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>列1</th>
+          <th>列2</th>
+          <th>列3</th>
+          <th>列4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>内容1</td>
+          <td>内容2</td>
+          <td>内容3</td>
+          <td>内容4</td>
+        </tr>
+        <tr>
+          <td>内容1</td>
+          <td>内容2</td>
+          <td>内容3</td>
+          <td>内容4</td>
+        </tr>
+        <tr>
+          <td>内容1</td>
+          <td>内容2</td>
+          <td>内容3</td>
+          <td>内容4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bg">
+  </div>
+  <img src="./goods2.png" alt="">
+</body>
+</html>
