@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bordered {
+        border: 1px solid red;
+      }
+      .pink {
+        background-color: pink;
+      }
+      .test {
+        color: blue;
+      }
+
+      .container {
+        margin: 0 auto;
+        width: 90%;
+        /* height: 300px; */
+        background-color: pink;
+        border: 1px solid pink;
+      }
+
+      .item {
+        width: 24%;
+        min-width: 300px;
+        height: 250px;
+        background-color: royalblue;
+        float: left;
+        margin: 5px;
+        vertical-align: middle;
+      }
+
+      .clearfix {
+        clear: both;
+      }
+
+      #pasteContainer {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #ccc;
+        -webkit-user-modify: read-write;
+        -moz-user-modify: read-write;
+        -moz-user-modify: read-write;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div class="child">
+        <div class="test">test1</div>
+      </div>
+    </div>
+    <hr />
+    <button onclick="test()">querySelector</button>
+
+    <div class="container">
+      <div class="item">test</div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="clearfix"></div>
+    </div>
+
+    <hr />
+    <a href="#" id="download-link" target="_blank">下载文件</a>
+    <div id="pasteContainer"></div>
+
+    <script>
+      function test() {
+        var el = document.querySelector("#parent .child .test");
+        console.log(el);
+        el.style.backgroundColor = "pink";
+        el.classList.remove("aaa");
+        el.classList.add("bordered");
+        el.classList.add("pink");
+        var els = document.querySelector("#parent .child .test");
+        console.log(els);
+      }
+
+      let number = 0;
+      const timer = setInterval(() => {
+        number++;
+        console.log("aaa", number, new Date());
+        if (number >= 3) {
+          clearInterval(timer);
+        }
+      }, 1000);
+
+      (function () {
+        console.log("loaded");
+        const testTextArea = document.getElementById("pasteContainer");
+        testTextArea.addEventListener("paste", pasteHandler2);
+      })();
+
+      // function pasteHandler(e) {
+      //   console.log("pasteHandler:", e.clipboardData, window.clipboardData);
+      //   let file = null;
+      //   var data = e.clipboardData || window.clipboardData,
+      //     that = this;
+      //   console.log("fun", data, data.items[0]);
+      //   blob = data.items[0].getAsFile();
+      //   var isImg = (blob && 1) || -1;
+      //   var reader = new FileReader();
+      //   if (isImg >= 0) {
+      //     //将文件读取为 DataURL
+      //     reader.readAsDataURL(blob);
+      //   }
+      //   reader.onload = function (event) {
+      //     //获取base64流
+      //     var base64_str = event.target.result;
+      //     //div中的img标签src属性赋值，可以直接展示图片
+      //     // console.log('base64_str',base64_str);
+      //     var bytes = window.atob(base64_str.split(",")[1]);
+      //     var array = [];
+      //     for (var i = 0; i < bytes.length; i++) {
+      //       array.push(bytes.charCodeAt(i));
+      //     }
+      //     var blob = new Blob([new Uint8Array(array)], { type: "image/jpeg" });
+      //     var formData = new FormData();
+      //     formData.append("file", blob, Date.now() + ".jpg");
+      //     formData.append("filename", "file");
+      //     console.log(blob);
+      //   };
+      // }
+
+      function pasteHandler2(e) {
+        //console.log("pasteHandler:", e, e.clipboardData);
+        if (e.clipboardData) {
+          // let item0=e.clipboardData.items[0];
+          // console.log('item0',item0);
+          let file = e.clipboardData.items[0].getAsFile();
+          console.log("file:", file);
+          if (file.type == "text/plain") {
+            let reader = new FileReader();
+            reader.onload = (event) => {
+              console.log("reader.onload:", typeof event.target.result);
+              // 前面加上"\ufeff"是为了防止中文乱码
+              let blob = new Blob(["\ufeff", event.target.result], {
+                type: file.type,
+              });
+              setDownloadLink(blob, file.name);
+            };
+            reader.readAsText(file, "UTF-8");
+          } else {
+            setDownloadLink(file, file.name);
+          }
+        }
+      }
+
+      function setDownloadLink(blob, fileName) {
+        let tempUrl = URL.createObjectURL(blob);
+        let downloadLinkEl = document.getElementById("download-link");
+        downloadLinkEl.href = tempUrl;
+        // 设置了download特性，则会下载文件，而不会在新窗口打开
+        // download的属性即为下载的文件名
+        // downloadLinkEl.download=fileName;
+      }
+    </script>
+  </body>
+</html>
