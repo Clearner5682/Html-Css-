@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+      body {
+        margin: 0 auto;
+        background-color: #f7f9fa;
+      }
+
+      .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background-color: #fff;
+        height: 50px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+      }
+
+      .nav-bar .menu-switch {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6a00;
+        cursor: pointer;
+      }
+
+      .nav-bar .menu-switch .line {
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        left: 15px;
+        background-color: #fff;
+        transition: all 0.3s;
+      }
+
+      .nav-bar .menu-switch .line:nth-of-type(1) {
+        top: 17px;
+      }
+      .nav-bar .menu-switch.on .line:nth-of-type(1) {
+        transform: rotate(45deg);
+        transform-origin: left center;
+        left: 18px;
+      }
+
+      .nav-bar .menu-switch .line:nth-of-type(2) {
+        top: 24px;
+      }
+      .nav-bar .menu-switch.on .line:nth-of-type(2) {
+        opacity: 0;
+        left: 18px;
+      }
+
+      .nav-bar .menu-switch .line:nth-of-type(3) {
+        top: 31px;
+      }
+      .nav-bar .menu-switch.on .line:nth-of-type(3) {
+        transform: rotate(-45deg);
+        transform-origin: left center;
+        left: 18px;
+      }
+
+      section.content {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 50px);
+        overflow: hidden;
+      }
+      section.content h1,
+      section.content p {
+        text-align: right;
+      }
+
+      .menu-container {
+        position: fixed;
+        top: 50px;
+        height: calc(100vh - 50px);
+        min-width: 750px;
+        max-width: 980px;
+        background-color: #fff;
+        transition: all 300ms ease-in-out 0s;
+        z-index: 901;
+        display: flex;
+        color: #666;
+        overflow: hidden;
+        font-size: 12px;
+        transform: translateX(-100%);
+      }
+      .menu-container.on {
+        transform: translateX(0);
+      }
+
+      .menu-container-mask {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 900;
+      }
+
+      .menu-container i.btn-close {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        font-size: 24px;
+      }
+
+      .menu-container .left-part {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #ebebeb;
+        padding-top: 30px;
+      }
+
+      .menu-container .left-part .nav-block-container {
+        flex: 1;
+        padding-left: 32px;
+        overflow-y: scroll;
+      }
+
+      .menu-container .left-part .nav-block-container .nav-block {
+        display: block;
+        columns: 200px 4;
+        column-gap: 12px;
+      }
+
+      .menu-container
+        .left-part
+        .nav-block-container
+        .nav-block
+        .nav-block-item {
+        display: inline-block;
+        break-inside: avoid;
+        width: 200px;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+
+      .nav-block-item h1 {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ff6a00;
+        margin: 0;
+      }
+      .nav-block-item h2 {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+        margin: 0;
+        margin-top: 8px;
+      }
+      .nav-block-item h2:nth-of-type(1){
+        margin-top: 0;
+      }
+
+      .nav-block-item .menu-item {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+        cursor: pointer;
+      }
+
+      .menu-container .right-part {
+        width: 200px;
+        padding-top: 30px;
+      }
+
+      .menu-container .right-part .top-nav {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .menu-container .right-part .top-nav li {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 12px;
+        cursor: pointer;
+        border-left: 1px solid transparent;
+        transition: all 0.3s;
+      }
+      .menu-container .right-part .top-nav li:hover,
+      .menu-container .right-part .top-nav li.active {
+        color: #ff6a00;
+        border-left: 1px solid #ff6a00;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="nav-bar">
+      <div class="menu-switch">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </section>
+    <div class="menu-container">
+      <div class="left-part">
+        <div class="nav-block-container">
+          <div class="nav-block">
+            <div class="nav-block-item">
+              <h1 class="level1-title">计算</h1>
+              <h2 class="level2-title">云服务器</h2>
+              <div class="menu-item">云服务器ECS</div>
+              <div class="menu-item">轻量应用服务器</div>
+              <div class="menu-item">弹性加速计算实例</div>
+              <div class="menu-item">弹性伸缩</div>
+              <div class="menu-item">云虚拟主机</div>
+              <div class="menu-item">弹性容器实例ECI</div>
+              <div class="menu-item">弹性云手机</div>
+              <div class="menu-item">计算巢服务</div>
+              <div class="menu-item">VMware服务</div>
+              <h2 class="level2-title">高性能计算</h2>
+              <div class="menu-item">弹性高性能计算E-HPC</div>
+              <div class="menu-item">批量计算</div>
+              <h2 class="level2-title">Serverless</h2>
+              <div class="menu-item">函数计算FC</div>
+              <div class="menu-item">云工作流CloudFlow</div>
+              <div class="menu-item">Serverless应用引擎SAE</div>
+              <h2 class="level2-title">无影</h2>
+              <div class="menu-item">云桌面</div>
+              <div class="menu-item">无影云电脑</div>
+              <div class="menu-item">无影云应用</div>
+              <h2 class="level2-title">边缘计算</h2>
+              <div class="menu-item">边缘节点服务</div>
+              <div class="menu-item">边缘网络加速ENA</div>
+              <div class="menu-item">视图计算</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">容器</h1>
+              <h2 class="level2-title">容器服务</h2>
+              <div class="menu-item">Serverless容器服务ASK</div>
+              <div class="menu-item">容器镜像服务ACR</div>
+              <div class="menu-item">容器服务Kubernetes版</div>
+              <div class="menu-item">云原生应用交付平台ADP</div>
+              <div class="menu-item">分布式云容器平台</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">存储</h1>
+              <h2 class="level2-title">基础存储服务</h2>
+              <div class="menu-item">对象存储OSS</div>
+              <div class="menu-item">文件存储NAS</div>
+              <div class="menu-item">表格存储TableStore</div>
+              <div class="menu-item">文件存储HDFS</div>
+              <div class="menu-item">数据库文件存储DBFS</div>
+              <div class="menu-item">块存储EBS</div>
+              <h2 class="level2-title">存储数据服务</h2>
+              <div class="menu-item">只能媒体管理IMM</div>
+              <div class="menu-item">网盘与相册服务PDS</div>
+              <div class="menu-item">日志服务SLS</div>
+              <div class="menu-item">云备份Cloud Backup</div>
+              <h2 class="level2-title">数据迁移与工具</h2>
+              <div class="menu-item">云存储网关CSG</div>
+              <div class="menu-item">闪电立方Data Transport</div>
+              <h2 class="level2-title">混合云存储</h2>
+              <div class="menu-item">混合云容灾HDR</div>
+              <div class="menu-item">混合云存储</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">网络与CDN</h1>
+              <h2 class="level2-title">云上网络</h2>
+              <div class="menu-item">专有网络VPC</div>
+              <div class="menu-item">负载均衡</div>
+              <div class="menu-item">NAT网关</div>
+              <div class="menu-item">弹性公网IP</div>
+              <div class="menu-item">云数据传输</div>
+              <div class="menu-item">共享带宽</div>
+              <div class="menu-item">私网连接</div>
+              <div class="menu-item">IPV6转换服务</div>
+              <div class="menu-item">云解析PrivateZone</div>
+              <div class="menu-item">共享流量包</div>
+              <div class="menu-item">网络智能服务</div>
+              <h2 class="level2-title">跨地域网络</h2>
+              <div class="menu-item">云企业网</div>
+              <div class="menu-item">全球加速</div>
+              <h2 class="level2-title">混合云网络</h2>
+              <div class="menu-item">VPN网关</div>
+              <div class="menu-item">智能接入网关</div>
+              <div class="menu-item">高速通道</div>
+              <div class="menu-item">5G高速上云服务</div>
+              <div class="menu-item">云连接器</div>
+              <h2 class="level2-title">CDN</h2>
+              <div class="menu-item">CDN</div>
+              <div class="menu-item">PCDN</div>
+              <div class="menu-item">全站加速</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">安全</h1>
+              <h2 class="level2-title">云安全</h2>
+              <div class="menu-item">云盾</div>
+              <div class="menu-item">流量安全(DDoS基础防护)</div>
+              <div class="menu-item">DDoS高防</div>
+              <div class="menu-item">Web应用防火墙WAF</div>
+              <div class="menu-item">云安全中心</div>
+              <div class="menu-item">办公安全平台SASE</div>
+              <div class="menu-item">云防火墙(网络安全)</div>
+              <div class="menu-item">堡垒机(安全运维)</div>
+              <div class="menu-item">验证码</div>
+              <h2 class="level2-title">数据安全</h2>
+              <div class="menu-item">数据安全中心</div>
+              <div class="menu-item">数据库审计</div>
+              <div class="menu-item">加密服务</div>
+              <div class="menu-item">秘钥管理服务</div>
+              <div class="menu-item">数字证书管理服务(SSL证书)</div>
+              <h2 class="level2-title">身份安全</h2>
+              <div class="menu-item">终端访问控制系统</div>
+              <div class="menu-item">应用身份服务(IDaaS)</div>
+              <h2 class="level2-title">业务安全</h2>
+              <div class="menu-item">内容安全</div>
+              <div class="menu-item">风险识别</div>
+              <div class="menu-item">实人认证</div>
+              <div class="menu-item">游戏盾</div>
+              <div class="menu-item">智能核身</div>
+              <div class="menu-item">区块链服务</div>
+              <div class="menu-item">金融级实人认证</div>
+              <div class="menu-item">信息核验</div>
+              <h2 class="level2-title">安全服务</h2>
+              <div class="menu-item">安全管家</div>
+              <div class="menu-item">先知</div>
+              <div class="menu-item">威胁情报</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">中间件</h1>
+              <h2 class="level2-title">微服务工具与平台</h2>
+              <div class="menu-item">企业级分布式应用服务</div>
+              <div class="menu-item">微服务引擎</div>
+              <div class="menu-item">全局事务服务</div>
+              <div class="menu-item">应用高可用服务</div>
+              <div class="menu-item">金融分布式架构</div>
+              <div class="menu-item">服务网格</div>
+              <div class="menu-item">分布式任务调度</div>
+              <h2 class="level2-title">云消息队列</h2>
+              <div class="menu-item">消息队列RocketMq版</div>
+              <div class="menu-item">消息队列Kafka版</div>
+              <div class="menu-item">消息队列RabbitMq版</div>
+              <div class="menu-item">消息队列MQTT版</div>
+              <div class="menu-item">消息服务MNS</div>
+              <h2 class="level2-title">应用集成</h2>
+              <div class="menu-item">云服务总线CSB</div>
+              <div class="menu-item">事件总线EventBridge</div>
+              <h2 class="level2-title">云原生可观测</h2>
+              <div class="menu-item">性能测试</div>
+              <div class="menu-item">应用实时监控服务</div>
+              <div class="menu-item">可观测链路</div>
+              <div class="menu-item">可观测监控</div>
+              <div class="menu-item">可观测可视化</div>
+              <div class="menu-item">区块链服务</div>
+              <div class="menu-item">金融级实人认证</div>
+              <div class="menu-item">信息核验</div>
+              <h2 class="level2-title">安全服务</h2>
+              <div class="menu-item">安全管家</div>
+              <div class="menu-item">先知</div>
+              <div class="menu-item">威胁情报</div>
+            </div>
+            <div class="nav-block-item">
+              <h1 class="level1-title">数据库</h1>
+              <h2 class="level2-title">关系型数据库</h2>
+              <div class="menu-item">云原生数据库PolarDB</div>
+              <div class="menu-item">云原生数据库PolarDB分布式版</div>
+              <div class="menu-item">云数据库RDS</div>
+              <div class="menu-item">云数据库OceanBase</div>
+              <h2 class="level2-title">No SQL数据库</h2>
+              <div class="menu-item">云数据库Redis版</div>
+              <div class="menu-item">云原生多模数据库Lindorm</div>
+              <div class="menu-item">云数据库MongoDB版</div>
+              <div class="menu-item">云数据库HBase版</div>
+              <div class="menu-item">时序数据库TSDB</div>
+              <h2 class="level2-title">数据库平台与服务</h2>
+              <div class="menu-item">数据库专家服务</div>
+              <div class="menu-item">云数据库专属集群MyBase</div>
+              <h2 class="level2-title">数据仓库</h2>
+              <div class="menu-item">云原生数据仓库MySQL版</div>
+              <div class="menu-item">云原生数据仓库PostgreSQL版</div>
+              <div class="menu-item">云数据库ClickHouse</div>
+              <div class="menu-item">云原生数据湖分析</div>
+              <div class="menu-item">云数据库SelectDB版</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-part">
+        <ul class="top-nav">
+          <li class="top-nav-item">计算</li>
+          <li class="top-nav-item">容器</li>
+          <li class="top-nav-item">存储</li>
+          <li class="top-nav-item">网络与CDN</li>
+          <li class="top-nav-item">安全</li>
+          <li class="top-nav-item">中间件</li>
+          <li class="top-nav-item">数据库</li>
+          <li class="top-nav-item">大数据计算</li>
+          <li class="top-nav-item">人工智能与机器学习</li>
+          <li class="top-nav-item">媒体服务</li>
+          <li class="top-nav-item">企业服务与云通信</li>
+          <li class="top-nav-item">物联网</li>
+          <li class="top-nav-item">开发工具</li>
+          <li class="top-nav-item">迁移与运维管理</li>
+          <li class="top-nav-item">云市场</li>
+          <li class="top-nav-item">支持与服务</li>
+        </ul>
+      </div>
+      <i class="btn-close"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6z"
+          /></svg
+      ></i>
+    </div>
+    <div class="menu-container-mask"></div>
+    <section class="content">
+      <h1>内容区域</h1>
+      <p>我有一头小毛驴</p>
+      <p>我从来也不骑</p>
+    </section>
+
+    <script>
+      $(function () {
+        $(".menu-switch").click(function () {
+          $(this).toggleClass("on");
+          $(".menu-container").toggleClass("on");
+        });
+
+        $(".btn-close").click(function () {
+          $(".menu-switch").removeClass("on");
+          $(".menu-container").removeClass("on");
+        });
+
+        $(".top-nav-item").click(function () {
+          $(".top-nav-item").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

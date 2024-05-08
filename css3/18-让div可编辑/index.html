@@ -41,8 +41,10 @@
 </head>
 <body>
   <div class="num"></div>
-  <div class="content" editable="true"></div>
+  <div class="content" editable="true" select autofocus></div>
   <input type="button" value="获取内容">
+  <input type="button" value="选中所有" onclick="selectAll()">
+  <input id="txtTest" type="text" value="hello world" onkeypress="handleKeypress()" />
 
 
   <script>
@@ -65,6 +67,20 @@
         index++;
       }
       console.log(textLineArray);
+    }
+    
+    function selectAll(){
+      // $("#txtTest").focus();
+      // $("#txtTest").select();
+      // document.execCommand("selectAll");
+      // document.getElementById("txtTest").setSelectionRange(0,11);
+      let inputeElement = document.getElementById("txtTest");
+      inputeElement.focus();
+      inputeElement.select();
+    }
+
+    function handleKeypress(){
+      console.log("handleKeypress");
     }
   </script>
 </body>
