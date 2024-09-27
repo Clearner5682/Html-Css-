@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag</title>
+  <style>
+    body {
+      margin: 0;
+      user-select: none;
+    }
+
+    .dropzone {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      margin: 10px;
+    }
+    #draggable {
+      width: 100px;
+      height: 100px;
+      background-color:pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropzone">
+    <div id="draggable" draggable="true"></div>
+  </div>
+  <div class="dropzone" id="droptarget"></div>
+
+  <script type="text/javascript">
+    const source = document.getElementById('draggable');
+    
+    const target = document.getElementById('droptarget');
+    target.addEventListener("dragover", function(event) {
+      event.preventDefault();//阻止默认行为以允许放置
+    }, false);
+
+    target.addEventListener("drop", function(event) {
+      event.preventDefault();//阻止默认行为
+      // const data = event.dataTransfer.getData("text");
+      // const draggable = document.getElementById(data);
+      event.target.appendChild(source);
+    }, false);
+  </script>
+</body>
+</html>
