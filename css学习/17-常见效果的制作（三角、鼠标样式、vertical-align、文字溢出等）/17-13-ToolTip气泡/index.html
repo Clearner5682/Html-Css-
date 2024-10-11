@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToolTip气泡</title>
   <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hover-button {
+      margin-left: 100px;
+      margin-top: 100px;
+    }
     .tool-tip {
-      position: relative;
-      width: 200px;
-      height: 100px;
+      position: fixed;
       background-color: #fff;
       border: 1px solid #dcdfe6;
       border-radius: 4px;
-      margin: 100px 100px;
+      padding: 5px;      
     }
     .mask {
       position: absolute;
@@ -26,24 +34,55 @@
     }
     .triangle {
       position: absolute;
-      top: 0;
+      top: -5px;
       left: 50%;
       margin-left: -6px;
-      transform: translateY(-5px);
+      /* 注意这里旋转和平移不能同时写，否则会导致旋转的位置偏移 */
+      transform: rotate(45deg);
       width: 12px;
       height: 12px;
-      rotate: 45deg;
       background-color: #fff;
       border: 1px solid #dcdfe6;
       border-right: 0;
       border-bottom: 0;
     }
   </style>
+  <script type="text/javascript" src="../../../js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-  <div class="tool-tip">
+  <input class="hover-button" type="button" value="hover me">
+  <div class="tool-tip" style="display: none;">
     <div class="mask"></div>
     <div class="triangle"></div>
+    hello the world
   </div>
+
+  <script>
+    $(function() {
+      $('.hover-button').hover(function(e) {
+        console.log("1111",e);
+        var buttonWidth = e.target.offsetWidth;//按钮的宽度
+        var buttonHeight = e.target.offsetHeight;//按钮的高度
+        var buttonLeft = e.target.offsetLeft;//按钮离视口左边的距离
+        var buttonTop = e.target.offsetTop;//按钮离视口上边的距离
+        
+
+        // ToolTip气泡在按钮的下面居中显示
+        var toolTipLeft = buttonLeft + buttonWidth/2;
+        var toolTipTop = buttonTop + buttonHeight + 10;
+        var toopTipTransformX = "-50%";
+
+        $(".tool-tip").css({
+          "top": toolTipTop+"px",
+          "left": toolTipLeft+"px",
+          "transform": "translateX("+toopTipTransformX+")"
+        });
+
+        $('.tool-tip').show();
+      }, function() {
+        $('.tool-tip').hide();
+      });
+    });
+  </script>
 </body>
 </html>

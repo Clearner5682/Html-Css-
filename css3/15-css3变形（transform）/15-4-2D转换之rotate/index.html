@@ -17,9 +17,29 @@
       /* rotate的参数为负，则逆时针旋转 */
       transform: rotate(360deg);
     }
+    div.parent {
+      margin-top: 100px;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      border: 1px solid lightgreen;
+    }
+    div.child {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      margin-left: -50px;
+      transform: rotate(45deg);
+    }
   </style>
 </head>
 <body>
   <img src="./1.png" alt="">
+  <div class="parent">
+    <div class="child"></div>
+  </div>
 </body>
 </html>
